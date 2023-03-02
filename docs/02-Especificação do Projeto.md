@@ -1,44 +1,274 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="1-Documentação de Contexto.md"> Documentação de Contexto</a></span>
-
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+A definição exata do problema e os pontos mais relevantes a serem tratados neste projeto foram consolidados com a participação dos usuários em um trabalho de imersão feita pelos membros da equipe a partir da observação dos usuários em seu local natural e por meio de entrevistas. Os detalhes levantados nesse processo foram afirmados na forma de personas e histórias de usuários
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+Seguem demonstradas por meio dos quadros apresentados o levantamento feito das personas e suas características durante o processo de entendimento do problema:
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+<table>
+  <tr>
+   <td width="1000" colspan="5" align="center">Carlos Augusto Santos, 26 anos.</td>
+  </tr>
+  <tr>
+   <td width="200" align="center" height="200" rowspan="3"><img src="https://user-images.githubusercontent.com/82043220/221442189-84044147-58db-4a44-89fb-d49e92e70768.png"></td>
+   <td width="150" align="center">Ocupação</td>
+   <td colspan="3">Analista de Sistemas.</td>
+   <tr>
+    <td width="150" align="center">Aplicativos</td>
+    <td width="210" align="center">Motivações</td>
+    <td width="210" align="center">Frustrações</td>
+    <td width="240" align="center">Hobbies, História</td>
+   </tr>
+  </tr>
+  <tr>
+   <td>
+    ●	Linkedin<br>
+    ●	Instagram<br>
+    ●	Stack Overflow<br>
+    ●	WhatsApp<br>
+    ●	Telegram<br>
+    ●	Discord<br>
+    ●	Youtube<br>
+    ●	Udemy<br>
+   </td>
+   <td>
+    ●	Ter maior controle sobre suas metas, prazos e objetivos para melhora na carreira.
+   </td>
+   <td>
+    ●	Não conseguir entregar seus projetos dentro do prazo.<br>
+    ●	Não ter boa organização de seus estudos.<br>
+   </td>
+   <td>
+    ●	Estudar Programação.<br>
+    ●	Ler.<br>
+    ●	Estudar outras línguas.<br>
+    ●	Adquirir Soft Skills.<br>
+   </td>
+  </tr>
+ </table>
+ 
+ <table>
+  <tr>
+   <td width="1000" colspan="5" align="center">Sandro Motta, 39 anos.</td>
+  </tr>
+  <tr>
+   <td width="200" align="center" height="200" rowspan="3"><img src="https://user-images.githubusercontent.com/82043220/221442568-ea2cd5ec-bfbd-4eab-8b5e-91dca98910e6.png"></td>
+   <td width="150" align="center">Ocupação</td>
+   <td colspan="3">Oficial de Justiça.</td>
+   <tr>
+    <td width="150" align="center">Aplicativos</td>
+    <td width="210" align="center">Motivações</td>
+    <td width="210" align="center">Frustrações</td>
+    <td width="240" align="center">Hobbies, História</td>
+   </tr>
+  </tr>
+  <tr>
+   <td>
+    ●	Facebook<br>
+    ●	Instagram<br>
+    ●	WhatsApp<br>
+    ●	Tse<br>
+    ●	Portal Fazenda.gov<br>
+    ●	Apple Books<br>
+   </td>
+   <td>
+    ●	Tornar-se excelência na prestação de seus serviços à comunidade.<br>
+    ●	Passar mais tempo com a família.
+   </td>
+   <td>
+    ●	Dificuldade em ter momentos familiares.<br>
+    ●	Falta de gestão eficiente de tempo útil.
+   </td>
+   <td>
+    ●	Resolver todos os casos que chegam em suas mãos com excelência.<br>
+    ●	Profissional dedicado e obcecado por resultados.
+   </td>
+  </tr>
+ </table>
+ 
+  <table>
+  <tr>
+   <td width="1000" colspan="5" align="center">Dominique de Cuoco, 28 anos.</td>
+  </tr>
+  <tr>
+   <td width="200" align="center" height="200" rowspan="3"><img src="https://user-images.githubusercontent.com/82043220/221442730-080921c6-4d34-4bd6-9aee-9657a0c2f8e0.png"></td>
+   <td width="150" align="center">Ocupação</td>
+   <td colspan="3">Fisioterapeuta.</td>
+   <tr>
+    <td width="150" align="center">Aplicativos</td>
+    <td width="210" align="center">Motivações</td>
+    <td width="210" align="center">Frustrações</td>
+    <td width="240" align="center">Hobbies, História</td>
+   </tr>
+  </tr>
+  <tr>
+   <td>
+    ●	Facebook<br>
+    ●	Instagram<br>
+    ●	WhatsApp<br>
+    ●	Bancos Digitais<br>
+    ●	Kavak<br>
+    ●	Web Motors<br>
+    ●	Uber
+   </td>
+   <td>
+    ●	Comprar um carro.<br>
+    ●	Otimizar seu tempo e aumentar seu conforto por meio do veículo a ser adquirido. 
+   </td>
+   <td>
+    ●	Não conseguir organizar suas finanças.<br>
+    ●	Não conseguir estipular um plano efetivo para compra do carro sem se endividar.<br>
+    ●	Ter que depender de aplicativos de deslocamento.
+   </td>
+   <td>
+    ●	Viajar com a família.<br>
+    ●	Atender pacientes em domicilio.<br>
+    ●	Se especializar em técnicas de terapias alternativas do trabalho.
+   </td>
+  </tr>
+ </table>
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+   <table>
+  <tr>
+   <td width="1000" colspan="5" align="center">Elizabete Kim, 22 anos.</td>
+  </tr>
+  <tr>
+   <td width="200" align="center" height="200" rowspan="3"><img src="https://user-images.githubusercontent.com/82043220/221442889-ba5c3eca-dae0-4354-9911-0bfe699b98bd.png"></td>
+   <td width="150" align="center">Ocupação</td>
+   <td colspan="3">Blogueira/Influenciadora Digital.</td>
+   <tr>
+    <td width="150" align="center">Aplicativos</td>
+    <td width="210" align="center">Motivações</td>
+    <td width="210" align="center">Frustrações</td>
+    <td width="240" align="center">Hobbies, História</td>
+   </tr>
+  </tr>
+  <tr>
+   <td>
+    ●	Facebook<br>
+    ●	Instagram<br>
+    ●	Twitter<br>
+    ●	TikTok<br>
+    ●	Youtube<br>
+    ●	Photoshop<br>
+    ●	DaVinci Resolve
+   </td>
+   <td>
+    ●	Ter mais constância em suas postagens.<br>
+    ●	Crescer como profissional digital.<br>
+    ●	Bater metas estipuladas por patrocinadores.
+   </td>
+   <td>
+    ●	Dificuldade em organização pessoal e profissional.<br>
+    ●	Oportunidades perdidas de patrocinadores por dificuldade de agenda.
+   </td>
+   <td>
+    ●	Gerenciar suas mídias Sociais.<br>
+    ●	Praticar exercícios físicos.<br>
+    ●	Aprofundar-se nos estudos de sua área de atuação.
+   </td>
+  </tr>
+ </table>
+ 
+<table>
+  <tr>
+   <td width="1000" colspan="5" align="center">Katarina Sanches, 46 anos.</td>
+  </tr>
+  <tr>
+   <td width="200" align="center" height="200" rowspan="3"><img src="https://user-images.githubusercontent.com/82043220/221443044-6f33e7c0-d034-4549-8b6b-f89b186bb1b2.png"></td>
+   <td width="150" align="center">Ocupação</td>
+   <td colspan="3">Empresária do ramo de cosméticos.</td>
+   <tr>
+    <td width="150" align="center">Aplicativos</td>
+    <td width="210" align="center">Motivações</td>
+    <td width="210" align="center">Frustrações</td>
+    <td width="240" align="center">Hobbies, História</td>
+   </tr>
+  </tr>
+  <tr>
+   <td>
+    ●	Linkedin<br>
+    ●	Instagram<br>
+    ●	TikTok<br>
+    ●	Youtube<br>
+    ●	Shopee
+   </td>
+   <td>
+    ●	Crescer sua empresa e maximizar seus lucros.<br>
+    ●	Terceirizar serviços.<br>
+    ●	Organizar seu tempo e sua agenda entre vida pessoal e empresarial.  
+   </td>
+   <td>
+    ●	Falta de resultados expressivos na busca de mão de obra qualificada.<br>
+    ●	Perda de tempo e de dinheiro ao não conseguir uma equipe qualificada para construir seus projetos.
+   </td>
+   <td>
+    ●	Criar artes gráficas.<br>
+    ●	Maquiagem.<br>
+    ●	Redes sociais
+   </td>
+  </tr>
+ </table>
+ 
+ <table>
+  <tr>
+   <td width="1000" colspan="5" align="center">Raimundo Ronaldo, 30 anos.</td>
+  </tr>
+  <tr>
+   <td width="200" align="center" height="200" rowspan="3"><img src="https://user-images.githubusercontent.com/82043220/221443187-551a2e22-9aa2-45ab-919f-6288c7740e02.png"></td>
+   <td width="150" align="center">Ocupação</td>
+   <td colspan="3">Bombeiro.</td>
+   <tr>
+    <td width="150" align="center">Aplicativos</td>
+    <td width="210" align="center">Motivações</td>
+    <td width="210" align="center">Frustrações</td>
+    <td width="240" align="center">Hobbies, História</td>
+   </tr>
+  </tr>
+  <tr>
+   <td>
+    ●	Youtube<br>
+    ●	Instagram<br>
+    ●	Linkedin<br>
+    ●	Netflix<br>
+    ●	Prime Vídeo
+   </td>
+   <td>
+    ●	Realizar um intercambio.<br>
+    ●	Fazer a vida no exterior.
+   </td>
+   <td>
+    ●	Não conseguir organização financeira e de agenda para realização de sua viagem.<br>
+    ●	Falta de organização pessoa para viver fora do país.
+   </td>
+   <td>
+    ●	Passar tempo em família.<br>
+    ●	Consumir conteúdo de viagens e a vida de brasileiros no exterior.
+   </td>
+  </tr>
+ </table>
+
+
 
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+A fim de buscar mais informações sobre os motivos e causas de uso dessas pessoas a plataforma a ser desenvolvida, foram realizadas perguntas por meio de entrevistas, tendo resultados demonstrados no quadro apresentado:
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+|Carlos Augusto Santos | Controlar melhor as atividades <br> pessoais/profissionais do meu dia a dia. | Evoluir na carreira e conseguir melhores oportunidades. |
+|Carlos Augusto Santos | Estabelecer com mais precisam prazos e metas. | Entregar com mais eficiência seus projetos acadêmicos e profissionais. |
+|Sandro Motta | Estabelecer uma rotina mais organizada. | Ter mais tempo de qualidade com a família. |
+|Sandro Motta | Reformular de forma organizada toda a sua vida profissional. | Ser mais notado, atingir mais resultados e consequentemente crescer na profissão. |
+|Dominique de Cuoco | Comprar um carro. | Atingir a realização pessoal de ter um veículo e não depender mais de aplicativos de corridas. |
+|Dominique de Cuoco | Organizar sua vida financeira. | Atingir o objetivo de comprar um carro. |
+|Elizabete Kim | Crescer sua imagem pública. | Atrair mais parceiros e patrocinadores. |
+|Elizabete Kim | Se tornar famosa. | Realização pessoal. |
+|Katarina Sanches | Organizar sua vida pessoal e profissional. | Crescer sua empresa e aumentar lucros. |
+|Katarina Sanches | Organizar sua vida pessoal e profissional. | Ter mais tempo com seu marido e filhos. |
+|Raimundo Ronaldo | Organizar suas finanças. | Fazer um intercâmbio. |
+|Raimundo Ronaldo | Organizar sua rotina. | Conseguir o que é necessário para fazer uma vida fora do país. |
 
 ## Modelagem do Processo de Negócio 
 
@@ -73,36 +303,102 @@ Obs.: todas as informações para gerar os indicadores devem estar no diagrama d
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
+As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para priorizar os requisitos, foi utilizado  a técnica de Escala de três Níveis, para essa técnica foi definido dois aspectos principais: importância e urgência. Assim, forma-se um quadrante, que é usado para obter o nível de prioridade do requisito.
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+<table>
+  <tr>
+    <td align="center" width="80">ID</td>
+    <td align="center" width="800">Descrição do Requisito</td>
+    <td align="center" width="100">Prioridade</td>
+  </tr>
+  <tr>
+    <td align="center">RF-001</td>
+    <td align="left">Permitir que o usuário crie uma conta no aplicativo.</td>
+    <td align="center">ALTA</td>
+  </tr>
+  <tr>
+    <td align="center">RF-002</td>
+    <td align="left">Permitir que o usuário cadastre objetivos.</td>
+    <td align="center">ALTA</td>
+  </tr>
+  <tr>
+    <td align="center">RF-003</td>
+    <td align="left">Permitir que o usuário cadastre metas necessárias para concluir um objetivo.</td>
+    <td align="center">ALTA</td>
+  </tr>
+  <tr>
+    <td align="center">RF-004</td>
+    <td align="left">Permitir que o usuário crie metas compartilhadas entre objetivos.</td>
+    <td align="center">MÉDIA</td>
+  </tr>
+  <tr>
+    <td align="center">RF-005</td>
+    <td align="left">Permitir que o usuário informe valores em uma carteira compartilhada entre metas de valor.</td>
+    <td align="center">BAIXA</td>
+  </tr>
+  <tr>
+    <td align="center">RF-006</td>
+    <td align="left">Gerar relatórios de objetivos concluídos.</td>
+    <td align="center">MÉDIA</td>
+  </tr>
+  <tr>
+    <td align="center">RF-007</td>
+    <td align="left">Apresentar o avanço percentual dos objetivos.</td>
+    <td align="center">MÉDIA</td>
+  </tr>
+  <tr>
+    <td align="center">RF-008</td>
+    <td align="left">Permitir que o usuário visualize os objetivos cadastrados.</td>
+    <td align="center">ALTA</td>
+  </tr>
+  <tr>
+    <td align="center">RF-009</td>
+    <td align="left">Permitir que o usuário visualize as metas cadastradas.</td>
+    <td align="center">ALTA</td>
+  </tr>
+  <tr>
+    <td align="center">RF-010</td>
+    <td align="left">Permitir que o usuário decida se metas de valor concluídas vão abater o valor total na carteira compartilhada.</td>
+    <td align="center">BAIXA</td>
+  </tr>
+</table>
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+<table>
+  <tr>
+    <td align="center" width="100">ID</td>
+    <td align="center" width="800">Descrição do Requisito</td>
+    <td align="center" width="100">Prioridade</td>
+  </tr>
+  <tr>
+    <td align="center">RNF-001</td>
+    <td align="left">O sistema deve ser responsivo para rodar em um dispositivos móvel</td>
+    <td align="center">ALTA</td>
+  </tr>
+  <tr>
+    <td align="center">RNF-002</td>
+    <td align="left">O Tempo de consulta deverá ser de no máximo 2s</td>
+    <td align="center">ALTA</td>
+  </tr>
+  <tr>
+    <td align="center">RNF-003</td>
+    <td align="left">O Sistema deve manter o mesmo padrão de ícones para todas as páginas.</td>
+    <td align="center">MÉDIA</td>
+  </tr>
+  <tr>
+    <td align="center">RNF-005</td>
+    <td align="left">O Sistema deve notificar usuários mesmo minimizado.</td>
+    <td align="center">MÉDIA</td>
+  </tr>
+  <tr>
+    <td align="center">RNF-006</td>
+    <td align="left">O Sistema deve manter o mesmo padrão de cores para todas as páginas.</td>
+    <td align="center">MÉDIA</td>
+  </tr>
+</table>
 
 ## Restrições
 
@@ -112,6 +408,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
 |02| Não pode ser desenvolvido um módulo de backend        |
+|03| O projeto deverá ser feito apenas por integrantes do grupo |
+|04| O projeto só pode ser desenvolvido utilizando o framework React-Native |
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
 
