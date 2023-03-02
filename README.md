@@ -1,27 +1,39 @@
-# TÍTULO DO PROJETO
+<h1><img src="https://user-images.githubusercontent.com/82043220/221437866-5b1adb59-3a6c-4d95-9501-2f108c781d1f.png"/></h1>
 
-`CURSO`
+<h6 align="right">Criado em 26 de Fevereiro de 2023<br><a href="https://www.pucminas.br/PucVirtual/Paginas/default.aspx">PUC Minas Virtual</a></h6>
 
-`DISCIPLINA`
 
-`SEMESTRE`
+`Análise e Desenvolvimento de Sistemas`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+`Projeto: Análise e Projeto de Sistemas de Software`
+
+`Terceiro Semestre`
+
+## Descrição
+
+Tenha em suas mãos o caminho para seus sonhos,  
+há um clique de distância.
+
+Um app simples de gestão de metas, que te permite ter o controle  
+dos seus objetivos e te mostra como alcançá-los.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+| [<img src="https://avatars.githubusercontent.com/u/82043220?v=4" width=115><br><sub>Raul Shinaede</sub>](https://github.com/RaulShinaede) | [<img src="https://avatars.githubusercontent.com/u/102563767?v=4" width=115><br><sub>Bruno Sellas</sub>](https://github.com/brunosellas) | [<img src="https://avatars.githubusercontent.com/u/86859418?v=4" width=115><br><sub>Gabriel Nakhata</sub>](https://github.com/gabrielnakhata) | [<img src="https://avatars.githubusercontent.com/u/102640910?v=4" width=115><br><sub>Renato Liberato Ferreira</sub>](https://github.com/ADS-RLF) | [<img src="https://avatars.githubusercontent.com/u/104144665?v=4" width=115><br><sub>Ayrle Sales</sub>](https://github.com/Ayrlesales) | [<img src="https://avatars.githubusercontent.com/u/80483432?v=4" width=115><br><sub>Pedro Guimarães Santos</sub>](https://github.com/pecosaints) |
+| :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Orientador
 
-* Nome completo do professor 1
+| [<img src="https://avatars.githubusercontent.com/u/80125344?v=4" width=115><br><sub>Will Ricardo dos Santos Machado</sub>](https://github.com/willrsmachado) |
+| :---: |
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+// TODO:
+
+- ✅ Como baixar
+- 📦 Como compilar
+- 🚀 Como executar 
 
 # Documentação
 
@@ -48,3 +60,4 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 # Apresentação
 
 <li><a href="presentation/README.md"> Apresentação da solução</a></li>
+
