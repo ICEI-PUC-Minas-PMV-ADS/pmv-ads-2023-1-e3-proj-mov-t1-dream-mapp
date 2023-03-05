@@ -1,25 +1,23 @@
 # Introdução
 
-Gerenciar os objetivos de vida pode ser uma tarefa desafiadora, especialmente quando se tem muitos objetivos e pouca organização. Sem um programa adequado para gerenciamento de objetivos, é fácil se sentir sobrecarregado e perdido, sem saber por onde começar ou como priorizar suas metas.
+Gerenciar os objetivos de vida pode ser uma tarefa desafiadora, especialmente quando se tem muitos objetivos e pouca organização. Sem um programa adequado para o gerenciamento de objetivos, é fácil sentir-se sobrecarregado e perdido, sem saber por onde começar ou como priorizar as metas.
 
-Nosso programa tem como objetivo ajudar a estabelecer metas claras e gerenciáveis. Com uma visão limpa dos objetivos e das etapas necessárias para alcançá-los, é mais fácil manter o foco e evitar distrações.
+Nosso programa tem como objetivo auxiliar na definição de metas claras e gerenciáveis. Com uma visão clara dos objetivos e das etapas necessárias para alcançá-los, é mais fácil manter o foco e evitar distrações.
 
-Além disso, um programa para gerenciamento de objetivos pode ajudar a rastrear o progresso ao longo do tempo, permitindo que se faça ajustes e adaptações conforme necessário. Isso pode ser especialmente útil quando se enfrenta obstáculos ou quando as circuntâncias mudam.
+Além disso, um programa de gerenciamento de objetivos pode auxiliar no rastreamento do progresso ao longo do tempo, permitindo ajustes e adaptações conforme necessário. Isso pode ser especialmente útil ao enfrentar obstáculos ou mudanças de circunstâncias.
 
 ## Problema
 
-Muitas pessoas enfrentam dificuldades para gerenciar seus objetivos de vida, sem um programa de gerenciamento de objetivos, as pessoas podem ter dificuldade para definir metas claras e realistas e, consequentemente, acabam procrastinando ou desistindo. Isso pode levar a sentimentos de frustração, desmotivação e insatisfação pessoal.
+Muitas pessoas enfrentam dificuldades em gerenciar seus objetivos de vida. Sem um programa adequado para o gerenciamento de objetivos, elas podem ter dificuldade para definir metas claras e realistas, o que pode resultar em procrastinação ou desistência. Esse comportamento pode levar a sentimentos de frustração, desmotivação e insatisfação pessoal.
 
-Em resumo, a falta de um programa de gerenciamento de objetivos pode levar a uma série de problemas. Por isso, é essencial ter uma ferramente que ajude na organização e gerenciamento de seus objetivos de forma simples e eficiente.
+Em resumo, a falta de um programa de gerenciamento de objetivos pode levar a uma série de problemas. Por isso, é essencial ter uma ferramenta que ajude na organização e gerenciamento de seus objetivos de forma simples e eficiente.
 
 
 ## Objetivos
 
-O objetivo geral deste projeto é desenvolver um aplicativo móvel de organização de objetivos, que 
-permita aos usuários registrar e acompanhar suas metas de forma simples e eficiente, com 
-acesso fácil e rápido em qualquer lugar e a qualquer momento.
+O objetivo geral deste projeto é desenvolver um aplicativo móvel de organização de objetivos, que permita aos usuários registrar e acompanhar suas metas de forma simples e eficiente, com acesso fácil e rápido em qualquer lugar e a qualquer momento.
 
-Como objetivos específicos, podemos destacar:
+Como objetivos específicos, destacamos:
 -  Criar uma interface intuitiva e de fácil navegação para os usuários, que permita a criação e 
 edição de objetivos e suas metas de maneira rápida e eficiente.
 - Disponibilizar funcionalidades que auxiliem o usuário na organização,  
