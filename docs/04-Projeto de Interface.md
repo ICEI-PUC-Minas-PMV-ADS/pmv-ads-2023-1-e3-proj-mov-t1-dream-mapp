@@ -78,7 +78,7 @@ Elemento que aparece no topo de todas as páginas.
 
 Elemento que aparece no final de todas as páginas.
 
-![image](https://user-images.githubusercontent.com/82043220/198894706-08457412-2bc0-4e69-9362-9c6d0b1b0bd5.png)
+<img src="https://user-images.githubusercontent.com/86859418/228708363-e8d65c1d-242b-4288-8ee7-8d1291cece77.jpg"></src>
 
 
  
