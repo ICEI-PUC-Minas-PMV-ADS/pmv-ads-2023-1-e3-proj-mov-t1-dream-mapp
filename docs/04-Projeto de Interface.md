@@ -68,13 +68,13 @@ Os arquivos que contém os layouts são:
 - site.js
 - _layout.cshtml
 
-## Navbar
+## Header
 
 Elemento que aparece no topo de todas as páginas.
 
-![image](https://user-images.githubusercontent.com/82043220/198894636-679898af-cde8-45d4-b153-65655398cc1c.png)
+<img src="https://user-images.githubusercontent.com/86859418/228708867-bdfa2b0d-4f75-4db5-a914-2dc2c055b923.jpg"></src>
 
-## Footer
+## Menu Global
 
 Elemento que aparece no final de todas as páginas.
 
