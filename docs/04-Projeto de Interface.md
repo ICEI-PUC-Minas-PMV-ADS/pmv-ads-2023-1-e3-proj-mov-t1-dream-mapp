@@ -32,8 +32,9 @@ Layout padrão da aplicação que será utilizado em todas as páginas com a def
 
 O template do site é composto pelos seguintes layouts:
 
-- Navbar
-- Footer
+- Header
+- Conteudo
+- Menu Global
 
 Além dos layouts, o site também possui uma paleta de cores bem definida:
 
