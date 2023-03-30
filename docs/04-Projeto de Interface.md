@@ -27,8 +27,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
 Layout padrão da aplicação que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia, a estrutura do site é mostrada a seguir:
 
 
-![Captura de tela 2022-10-30 151022](https://user-images.githubusercontent.com/82043220/198894473-55f5f1c5-4117-44fb-90d4-7ac84502f161.png)
-
+<img src="https://user-images.githubusercontent.com/86859418/228705332-d137a29c-97aa-4805-a5ae-e60a6989f093.jpg"></src>
 O template do site é composto pelos seguintes layouts:
 
 - Navbar
