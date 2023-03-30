@@ -11,7 +11,7 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 O diagrama apresenta o estudo do fluxo de interação do usuário com o sistema interativo e  muitas vezes sem a necessidade do desenho do design das telas da interface. Isso permite que o design das interações seja bem planejado e gere impacto na qualidade no design do wireframe interativo que será desenvolvido logo em seguida.
 
-<img src="https://user-images.githubusercontent.com/86859418/228703525-6f8cee21-a06a-4e49-bd09-bf70fde46c1a.jpeg"></img>
+<img src="https://user-images.githubusercontent.com/86859418/228703525-6f8cee21-a06a-4e49-bd09-bf70fde46c1a.jpeg" width="300px"></img>
 
 ![Exemplo de Diagrama de Fluxo](img/diagramafluxo2.jpg)
 
@@ -27,7 +27,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
 Layout padrão da aplicação que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia, a estrutura do site é mostrada a seguir:
 
 
-<img src="https://user-images.githubusercontent.com/86859418/228705765-d82a25d3-5153-4b06-869b-217bb5038582.jpg" width="200px"></src>
+<img src="https://user-images.githubusercontent.com/86859418/228705765-d82a25d3-5153-4b06-869b-217bb5038582.jpg" width="300px"></src>
 
 
 O template do site é composto pelos seguintes layouts:
