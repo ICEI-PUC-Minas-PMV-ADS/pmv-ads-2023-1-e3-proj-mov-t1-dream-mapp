@@ -67,7 +67,7 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
 
 O quadro kanban do projeto está disponível no link > - [Project Dream Mapp](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/227/views/1)  e é apresentado, no estado atual, na figura abaixo:
 
-<img src="https://user-images.githubusercontent.com/86859418/229247805-43cb10dd-e9fc-41b6-980d-85d773f74076.png"></img>
+<img src="https://user-images.githubusercontent.com/86859418/229248638-837acaee-a0a5-45be-a937-b2912e548883.png"></img>
 
 ### Ferramentas
 
