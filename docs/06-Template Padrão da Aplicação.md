@@ -1,8 +1,5 @@
 # Template Padrão da Aplicação
 
-Layout padrão da aplicação que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
-# Template Padrão da Aplicação
-
 Layout padrão da aplicação que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia, a estrutura do site é mostrada a seguir:
 
 
@@ -16,7 +13,7 @@ O template do site é composto pelos seguintes layouts:
 
 Além dos layouts, o site também possui uma paleta de cores bem definida:
 
-![blue](https://user-images.githubusercontent.com/82043220/198895640-54afbac6-2308-4026-b387-fe4827936738.png) Blue, seu hexadecimal é:
+![blue](https://reactnative.dev/docs/colors/#f0f8ff) Blue, seu hexadecimal é:
 ```
 ##f0f8ff
 ```
