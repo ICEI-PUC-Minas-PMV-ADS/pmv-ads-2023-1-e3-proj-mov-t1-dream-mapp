@@ -65,16 +65,15 @@ Para organização e distribuição das tarefas do projeto, a equipe está utili
   <li>Done: nesta lista são colocadas as tarefas finalizadas e as que passaram pelos testes e controle de qualidade, prontas para serem entregues aos usuários.</li>
  </ul>
 
-O quadro kanban do grupo no GitHub está disponível no link https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/227/views/1 e é apresentado, no estado atual, na figura abaixo:
+O quadro kanban do grupo no GitHub está disponível no link > - [Project Dream Mapp](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/227/views/1) e é apresentado, no estado atual, na figura abaixo:
+
 <img src="https://user-images.githubusercontent.com/86859418/229247805-43cb10dd-e9fc-41b6-980d-85d773f74076.png"></img>
 
 ### Ferramentas
 
 As ferramentas empregadas no projeto são:
 
-- Editor de código: Expo Dev
+- Editor de código: Expo Dev / Visual Studio Code
 - Ferramenta de gerenciamento: Github
 - Ferramenta de comunicação: Microsoft Teams
 - Ferramenta de desenho de tela (_wireframing_): Marvel
-
-O editor de código, Expo Dev, foi escolhido porque ele possui uma integração com o sistema de versão. A ferramenta de gerenciamento do Github foi selecionada pela flexibilidade para criar fluxos de trabalho personalizados que atendam às necessidades da equipe. A ferramenta de comunicação, Microsoft Teams, foi selecionada por ser a mesma utilizada nas reuniões com o professor orientador e product owner do projeto. Por fim, para criar os desenhos de tela, utilizamos a ferramenta Marvel por melhor captar as necessidades da nossa solução.
