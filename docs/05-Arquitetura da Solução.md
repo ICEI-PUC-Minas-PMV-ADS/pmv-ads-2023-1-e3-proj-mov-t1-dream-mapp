@@ -24,7 +24,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 
 ## Modelo Físico
 
-Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+Script do arquivo do banco dados SQL SERVER - modelagem de dados no link: <a src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e3-proj-mov-t1-dream-mapp/blob/main/bd/dream_mapp_modelagem.sql">Dream Mapp DB</a> 
 
 ## Tecnologias Utilizadas
 
