@@ -284,13 +284,13 @@ Apresente aqui uma descrição da sua proposta abordando seus limites e suas lig
 
 Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
 
-![Processo 1](img/02-bpmn-proc1.png)
+![Processo 1](https://user-images.githubusercontent.com/102563767/229199179-5bdf8cf3-973c-4594-af82-21f4a1c6e31b.jpg)
 
 ### Processo 2 – NOME DO PROCESSO
 
 Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
 
-![Processo 2](img/02-bpmn-proc2.png)
+![Processo 2](https://user-images.githubusercontent.com/102563767/229199752-7f9d4d8a-d126-418b-8ab8-fd591a022a84.jpg)
 
 ## Indicadores de Desempenho
 
@@ -298,7 +298,7 @@ Apresente aqui os principais indicadores de desempenho e algumas metas para o pr
 
 Usar o seguinte modelo: 
 
-![Indicadores de Desempenho](img/02-indic-desemp.png)
+![Indicadores de Desempenho](https://user-images.githubusercontent.com/102563767/229199884-90cc8773-3726-48d6-b78e-f2af4118a71d.jpg)
 Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
 
 ## Requisitos
