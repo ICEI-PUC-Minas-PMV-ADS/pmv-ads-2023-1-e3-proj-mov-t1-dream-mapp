@@ -17,7 +17,7 @@ Layout padrão da aplicação que será utilizado em todas as páginas com a def
 Layout padrão da aplicação que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia, a estrutura do site é mostrada a seguir:
 
 
-![Captura de tela 2022-10-30 151022](https://user-images.githubusercontent.com/82043220/198894473-55f5f1c5-4117-44fb-90d4-7ac84502f161.png)
+![Captura de tela 2022-10-30 151022](docs/img/template-dream-mapp.jpeg)
 
 O template do site é composto pelos seguintes layouts:
 
