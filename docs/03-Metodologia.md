@@ -1,27 +1,32 @@
 
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
-
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+A metodologia contempla as definições de ferramentas utilizadas pela equipe tanto para a manutenção dos códigos e demais artefatos quanto para a organização do time na execução das tarefas do projeto
 
 ## Relação de Ambientes de Trabalho
 
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito deverá ser apresentada em uma tabela que especifica que detalha Ambiente, Plataforma e Link de Acesso. 
-Nota: Vide documento modelo do estudo de caso "Portal de Notícias" e defina também os ambientes e frameworks que serão utilizados no desenvolvimento de aplicações móveis.
+Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito são apresentados na tabela que se segue:
+
+| Ambiente | Plaforma | Link de acesso |
+| ----- | --------- | -------- |
+| Repositório de código fonte | GitHub | [Repositório DreamMapp](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e3-proj-mov-t1-dream-mapp)|
+| Documento do Projeto | GitHub | [Documentção GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e3-proj-mov-t1-dream-mapp/tree/main/docs)|
+| Projeto de interface e Wireframes | Marvel | [Wireframe DreamMapp](https://marvelapp.com/prototype/9f7053g)
+| Gerenciamento do Projeto | GitHub | [Gerenciamento GitHub](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/227)
 
 ## Controle de Versão
 
-A ferramenta de controle de versão adotada no projeto foi o
-[Git](https://git-scm.com/), sendo que o [Github](https://github.com)
-foi utilizado para hospedagem do repositório.
+Para gestão do código fonte do software, é utilizado um processo de controle de fluxo com base no Git Flow apresentado por Vincent Driessen (2010), mostrado na figura na seguir.
+
+![image](https://user-images.githubusercontent.com/101372729/193473345-bee33e04-b0a0-4e71-bbff-68742751d042.png)
 
 O projeto segue a seguinte convenção para o nome de branches:
 
-- `main`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
-- `testing`: versão em testes do software
-- `dev`: versão de desenvolvimento do software
+- `Main`: Como Branch principal
+- `Hotfix`: Para correção de bugs
+- `Feature`: Para novas funcionalidades
+- `Develop`: Para desenvolvimento
+- `Release`: Para empacotar as modificações para o lançamento 
 
 Quanto à gerência de issues, o projeto adota a seguinte convenção para
 etiquetas:
@@ -31,49 +36,46 @@ etiquetas:
 - `enhancement`: uma funcionalidade precisa ser melhorada
 - `feature`: uma nova funcionalidade precisa ser introduzida
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
-
-> **Links Úteis**:
-> - [Microfundamento: Gerência de Configuração](https://pucminas.instructure.com/courses/87878/)
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
-
 ## Gerenciamento de Projeto
-
-A metodologia ágil escolhida para o desenvolvimento deste projeto foi o SCRUM, pois como citam Amaral, Fleury e Isoni (2019, p. 68), seus benefícios são a
-
-“visão clara dos resultados a entregar; ritmo e disciplina necessários à execução; definição de papéis e responsabilidades dos integrantes do projeto (Scrum Owner, Scrum Master e Team); empoderamento dos membros da equipe de projetos para atingir o desafio; conhecimento distribuído e compartilhado de forma colaborativa; ambiência favorável para crítica às ideias e não às pessoas.”
 
 ### Divisão de Papéis
 
-A equipe está organizada da seguinte maneira:
-- Scrum Master: Gabriel Nakhata;
-- Product Owner: Bruno Sellas;
-- Equipe de Desenvolvimento: Raul Shinaede, Renato Liberato, Ayreles Sales, Pedro Guimarães.
+Apresente a divisão de papéis entre os membros do grupo.
+
+Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
+- **Scrum Master**: [Gabriel Nakhata](https://github.com/gabrielnakhata)
+- **Product Owner**: [Bruno Selas](https://github.com/brunosellas)
+- **Equipe de Desenvolvimento**:
+  - [Renato Liberato Ferreira](https://github.com/ADS-RLF)
+  - [Ayrles Sales](https://github.com/Ayrlesales)
+  - [Pedro Guimarães Santos](https://github.com/pecosaints)
+  - [Raul Oliveira](https://github.com/RaulShinaede)
+  - [Gabriel Nakhata](https://github.com/gabrielnakhata)
+  - [Bruno Selas](https://github.com/brunosellas)
+- **Equipe de Design**: Simone Nogueira.
+  - [Raul Oliveira](https://github.com/RaulShinaede)
+  - [Gabriel Nakhata](https://github.com/gabrielnakhata)
 
 ### Processo
 
-Para organização e distribuição das tarefas do projeto, a equipe está utilizando o GitHub, estruturado com as seguintes listas: 
+Para organização e distribuição das tarefas do projeto, a equipe está utilizandoo GitHub, estruturado com as seguintes listas:
 
-<ul>
-  <li>Product Backlog: recebe as tarefas a serem trabalhadas e representa o Backlog do produto. Todas as atividades identificadas no decorrer do projeto são incorporadas a esta lista.</li>
-  <li>To Do: esta lista representa o Sprint Backlog que está sendo trabalhado.</li>
-  <li>In progress: lista das tarefas iniciadas.</li>
-  <li>Done: nesta lista são colocadas as tarefas finalizadas e as que passaram pelos testes e controle de qualidade, prontas para serem entregues aos usuários.</li>
- </ul>
+- **Product Backlog**: Todas as tarefas identificadas no decorrer do projeto são incorporadas a está lista.
+- **Sprint Backlog**: As tarefas que seram desenvolvidas na sprint são movidas para está lista.
+- **In Progress**: As tarefas iniciadas são movidas para está lista.
+- **Done**: As tarefas finalizadas são movidas para está lista.
 
-O quadro kanban do projeto está disponível no link > - [Project Dream Mapp](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/227/views/1)  e é apresentado, no estado atual, na figura abaixo:
+O quadro kanban do projeto está disponível no link: [Project Dream Mapp](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/227) e é apresentado, no estado atual, na figura abaixo:
 
-<img src="https://user-images.githubusercontent.com/86859418/229248638-837acaee-a0a5-45be-a937-b2912e548883.png"></img>
+![image](https://user-images.githubusercontent.com/82043220/229251260-9a7a6ec4-9896-4cb7-8d04-c4b92b34557c.png)
 
 ### Ferramentas
 
 As ferramentas empregadas no projeto são:
 
-- Editor de código: Expo Dev / Visual Studio Code
-- Ferramenta de gerenciamento: Github
-- Ferramenta de comunicação: Microsoft Teams
-- Ferramenta de desenho de tela (_wireframing_): Marvel
+- **Editor de código**: [Visual Studio Code](https://code.visualstudio.com/)
+- **Ferramentas de comunicação**: [Microsoft Teams](https://www.microsoft.com/pt-br/microsoft-teams/group-chat-software/)
+- **Ferramentas de desenho de tela (_wireframing_)**: [Marvel](https://marvelapp.com/)
+- **Ferramentas de gerenciamento do projeto**: [Github](https://github.com/)
+
+O Visual Studio Code foi escolhido porque ele possui uma integração com o sistema de versão e seu suporte ao desenvolvimento com react. O Teams foi escolhido como ferramenta de comunicação por ser mais prática. Para criar diagramas utilizamos o Marvel por melhor captar as necessidades da nossa solução. Por fim, para gerenciar o projeto foi escolhido o Github, por sua integração com o sistema de versão.
