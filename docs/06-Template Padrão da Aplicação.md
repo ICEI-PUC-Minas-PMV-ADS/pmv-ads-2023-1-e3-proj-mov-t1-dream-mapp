@@ -13,9 +13,9 @@ O template do site é composto pelos seguintes layouts:
 
 Além dos layouts, o site também possui uma paleta de cores bem definida:
 
-![blue](https://reactnative.dev/docs/colors/#f0f8ff) Blue, seu hexadecimal é:
+![blue](img/azul-dream-mapp.png) Blue, seu hexadecimal é:
 ```
-##f0f8ff
+#b0c4de
 ```
 
 ![white](https://user-images.githubusercontent.com/82043220/198895710-12674690-80fb-4ce1-adfb-97770fe9f209.png) white, seu hexadecimal é:
