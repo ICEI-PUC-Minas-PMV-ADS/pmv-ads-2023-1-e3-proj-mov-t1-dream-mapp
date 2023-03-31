@@ -58,10 +58,10 @@ Os arquivos que contém os layouts são:
 
 Elemento que aparece no topo de todas as páginas.
 
-![image](https://user-images.githubusercontent.com/82043220/198894636-679898af-cde8-45d4-b153-65655398cc1c.png)
+![image](img/header-dream-mapp.png)
 
 ## Menu Global
 
 Elemento que aparece no final de todas as páginas.
 
-![image](https://user-images.githubusercontent.com/82043220/198894706-08457412-2bc0-4e69-9362-9c6d0b1b0bd5.png)
+![image](img/menu-global-dream-mapp.png)
