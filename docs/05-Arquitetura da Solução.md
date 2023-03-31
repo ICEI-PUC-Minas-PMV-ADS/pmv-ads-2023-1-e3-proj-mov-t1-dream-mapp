@@ -28,9 +28,14 @@ Script do arquivo do banco dados SQL SERVER - modelagem de dados no link: > - [D
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+|Função    | Tecnologia  | 
+|------------|-----------------------------------------|
+| Linguagem | JavaScript | 
+| Framework | ReactNative | 
+| Bibliotecas | React Native Paper, React Navigation, Json server, Json server auth, Axios | 
+| IDE | Visual Studio Code | 
+| Ferramentas | Microsoft Teams, GitHub, Whatsapp | 
+| Banco de dados | SQL SERVER | 
 
 ## Hospedagem
 
