@@ -21,21 +21,31 @@ A Tela Home é responsável por uma visualização dos objetivos cadastrados pel
 
 ### Tela de Visualização de Objetivo
 
+A Tela de Visualização de Objetivo é responsável pela visualização mais detalhada do objetivo e suas metas.
+
 ![image](https://user-images.githubusercontent.com/82043220/229254643-567c37c8-e620-4769-aaf1-3b701d789b99.png)
 
 ### Tela de Edição de Objetivo
+
+A Tela de Edição de Objetivo é responsável pela edição do objetivo, adição e remoção de metas, além da conclusão de objetivo.
 
 ![image](https://user-images.githubusercontent.com/82043220/229254694-7cadae80-aa64-42f4-a378-e423bc529d75.png)
 
 ### Tela de Login
 
+A Tela de Login é responsável pelo login do usuário na aplicação.
+
 ![image](https://user-images.githubusercontent.com/82043220/229254727-4a2b8523-452b-4b49-a43b-e3f17819fc53.png)
 
 ### Tela de Cadastro
 
+A Tela de Cadastro é responsável pelo cadastro do usuário na aplicação.
+
 ![image](https://user-images.githubusercontent.com/82043220/229254746-c4b6727b-3999-4ba0-819f-3b3c407496f4.png)
 
 ### Tela de Perfil de usuário
+
+A Tela de perfil é responsável por listar as informações do usuário e suas conquistas.
 
 ![image](https://user-images.githubusercontent.com/82043220/229254776-393cb707-a341-4abf-ac45-56958fbe1b57.png)
 
