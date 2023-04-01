@@ -1,11 +1,7 @@
 
 # Projeto de Interface
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
-
-Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
-
- Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a>.
+Dentre as preocupações para a montagem da interface do sistema, será estabelecido foco em questões como agilidade, acessibilidade e usabilidade. Desta forma, o projeto tem uma identidade visual padronizada em todas as telas que são projetadas para funcionamento em mobile.
 
 ## Diagrama de Fluxo
 
@@ -16,6 +12,33 @@ O diagrama apresenta o estudo do fluxo de interação do usuário com o sistema 
 <img src="https://user-images.githubusercontent.com/86859418/229005972-98548723-521a-4c9c-ae8e-675146a650d5.jpg" width="1100px"></img>
 
 ## Wireframes
+
+### Tela Home
+
+A Tela Home é responsável por uma visualização dos objetivos cadastrados pelo usuário.
+
+![image](https://user-images.githubusercontent.com/82043220/229252912-b3dceb02-11c3-4c91-9e8d-5e17b16e31f4.png)
+
+### Tela de Visualização de Objetivo
+
+![image](https://user-images.githubusercontent.com/82043220/229254643-567c37c8-e620-4769-aaf1-3b701d789b99.png)
+
+### Tela de Edição de Objetivo
+
+![image](https://user-images.githubusercontent.com/82043220/229254694-7cadae80-aa64-42f4-a378-e423bc529d75.png)
+
+### Tela de Login
+
+![image](https://user-images.githubusercontent.com/82043220/229254727-4a2b8523-452b-4b49-a43b-e3f17819fc53.png)
+
+### Tela de Cadastro
+
+![image](https://user-images.githubusercontent.com/82043220/229254746-c4b6727b-3999-4ba0-819f-3b3c407496f4.png)
+
+### Tela de Perfil de usuário
+
+![image](https://user-images.githubusercontent.com/82043220/229254776-393cb707-a341-4abf-ac45-56958fbe1b57.png)
+
 
 # Template Padrão da Aplicação
 
@@ -75,13 +98,3 @@ Elemento que aparece no final de todas as páginas.
 
 <img src="https://user-images.githubusercontent.com/86859418/228708363-e8d65c1d-242b-4288-8ee7-8d1291cece77.jpg"></src>
 
-
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
