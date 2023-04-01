@@ -15,13 +15,13 @@ Além dos layouts, o site também possui uma paleta de cores bem definida:
 
 ![blue](img/azul-dream-mapp.png) Blue, seu hexadecimal é:
 ```
-#b0c4de
+#f0f8ff
 ```
 
-![white](https://user-images.githubusercontent.com/82043220/198895710-12674690-80fb-4ce1-adfb-97770fe9f209.png) white, seu hexadecimal é:
+![white](img/branco-dream-mapp.png) white, seu hexadecimal é:
 
 ```
-#fff
+#ffffff
 ```
 
 Os arquivos que contém os layouts são:
