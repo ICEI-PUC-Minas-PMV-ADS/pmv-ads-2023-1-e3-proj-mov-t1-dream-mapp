@@ -20,7 +20,7 @@ utilizando sua contra préviamente criada.
 
 Preview atual da página:
 
-![WhatsApp Image 2023-04-01 at 14 36 05](https://user-images.githubusercontent.com/82043220/229367364-f496cf90-1928-4696-abcf-a24b9dd6999d.jpeg)
+![preview-login-page](https://user-images.githubusercontent.com/82043220/229367364-f496cf90-1928-4696-abcf-a24b9dd6999d.jpeg)
 
 ## Página de visualização de objetivos
 
@@ -43,7 +43,7 @@ cadastrados pelo usuário e o seu avanço.
 
 Preview atual da página:
 
-![WhatsApp Image 2023-04-01 at 21 43 41](https://user-images.githubusercontent.com/82043220/229367886-fb99bc3b-7fda-4184-9b83-c76a8f87334d.jpeg)
+![preview-dream-page](https://user-images.githubusercontent.com/82043220/229367886-fb99bc3b-7fda-4184-9b83-c76a8f87334d.jpeg)
 
 ## Página de cadastro de objetivos
 
@@ -68,7 +68,7 @@ cadastre as metas necessárias para finalizar o objetivo.
 
 Preview atual da página:
 
-![code-preview](https://user-images.githubusercontent.com/82043220/229364252-9c689b22-32c3-4a4e-8985-8a251fbe32c6.png)
+![preview-cadastre-dream-page](https://user-images.githubusercontent.com/82043220/229364252-9c689b22-32c3-4a4e-8985-8a251fbe32c6.png)
 
 ## Página de Perfil
 
@@ -85,23 +85,24 @@ A página de perfil é responsável pelos dados do usuário e suas conquistas.
 
 Preview atual da página:
 
-![WhatsApp Image 2023-04-02 at 13 41 13](https://user-images.githubusercontent.com/82043220/229368106-f7051945-d332-4ceb-bffa-f9b318f26133.jpeg)
+![preview-profile-page](https://user-images.githubusercontent.com/82043220/229368106-f7051945-d332-4ceb-bffa-f9b318f26133.jpeg)
 
 
-## Página de Cliente
+## Página de Cadastro
 
 ### Sobre
-A página de perfil é responsável pelo cadastro dos dados dos clientes.
+A página de cadastro é responsável pela criação da conta do usuário na plataforma.
 
 ### Responsáveis
 
-- [Renato Liberato Ferreira](https://github.com/ADS=RLF)
+- [Renato Liberato Ferreira](https://github.com/ADS-RLF)
 
 ### Ambiente
 
-- **Branch**: [feature/profile-page](https://github.com/ADS-RLF/pmv-ads-2023-1-e3-proj-mov-t1-dream-mapp)
+- **Branch**: [feature/cadastre-page](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e3-proj-mov-t1-dream-mapp/tree/feature/cadastre-page)
 
 Preview atual da página:
 
-![WhatsApp Image 2023-04-02 at 13 41 13](https://github.com/ADS-RLF/pmv-ads-2023-1-e3-proj-mov-t1-dream-mapp/blob/main/Etapa%202%20-%20Dream-Mapp.pdf)
+![preview-cadastre-page](https://user-images.githubusercontent.com/82043220/229374708-01539335-f1f6-4c9c-aae8-094b02708a53.png)
+
 
