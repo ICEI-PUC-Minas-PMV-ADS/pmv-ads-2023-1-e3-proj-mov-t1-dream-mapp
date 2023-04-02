@@ -86,3 +86,22 @@ A página de perfil é responsável pelos dados do usuário e suas conquistas.
 Preview atual da página:
 
 ![WhatsApp Image 2023-04-02 at 13 41 13](https://user-images.githubusercontent.com/82043220/229368106-f7051945-d332-4ceb-bffa-f9b318f26133.jpeg)
+
+
+## Página de Cliente
+
+### Sobre
+A página de perfil é responsável pelo cadastro dos dados dos clientes.
+
+### Responsáveis
+
+- [Renato Liberato Ferreira](https://github.com/ADS=RLF)
+
+### Ambiente
+
+- **Branch**: [feature/profile-page](https://github.com/ADS-RLF/pmv-ads-2023-1-e3-proj-mov-t1-dream-mapp)
+
+Preview atual da página:
+
+![WhatsApp Image 2023-04-02 at 13 41 13](https://github.com/ADS-RLF/pmv-ads-2023-1-e3-proj-mov-t1-dream-mapp/blob/main/Etapa%202%20-%20Dream-Mapp.pdf)
+
