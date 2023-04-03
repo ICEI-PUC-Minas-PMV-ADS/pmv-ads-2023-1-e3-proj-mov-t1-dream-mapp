@@ -105,4 +105,21 @@ Preview atual da página:
 
 ![preview-cadastre-page](https://user-images.githubusercontent.com/82043220/229374708-01539335-f1f6-4c9c-aae8-094b02708a53.png)
 
+## Página Principal
+
+### Sobre
+A página principal lista todos os objetivos criados pelo usuário.
+
+### Responsáveis
+
+- [Gabriel Nakhata](https://github.com/gabrielnakhata)
+
+### Ambiente
+
+- **Branch**: [feature/home-page](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e3-proj-mov-t1-dream-mapp/tree/feature/home-page)
+
+Preview atual da página:
+
+![WhatsApp Image 2023-04-02 at 21 10 43](https://user-images.githubusercontent.com/82043220/229386662-fcf2f05f-69b8-47e7-8658-9e234a22749c.jpeg)
+
 
