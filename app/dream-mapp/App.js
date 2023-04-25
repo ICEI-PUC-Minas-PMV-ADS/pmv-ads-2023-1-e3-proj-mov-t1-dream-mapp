@@ -4,6 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Appbar } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import HomePage from './src/pages/HomePage';
+
 export default function App() {
 
   const _goBack = () => console.log('Went back');
@@ -12,13 +14,8 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <Appbar.Header>
-        <Appbar.BackAction onPress={_goBack} />
-        <Appbar.Content title="Title" />
-        <Appbar.Action icon="magnify" onPress={_handleSearch} />
-        <Appbar.Action icon="dots-vertical" onPress={_handleMore} />
-      </Appbar.Header>
-    </SafeAreaProvider>
+      <HomePage></HomePage>
+      </SafeAreaProvider>
   );
 }
 
