@@ -5,7 +5,7 @@ import TopBar from '../components/TopBar';
 import MenuGlobal from '../components/MenuGlobal';
 import Objetivo from '../components/Objetivo';
 
-function HomePage() {
+const HomePage = ({ navigation }) => {
   const tasks = [
     { id: 1, title: 'Objetivo #01', description: 'Descrição do objetivo #01', percentage: 60, completed: false },
     { id: 2, title: 'Objetivo #02', description: 'Descrição do objetivo #02', percentage: 30, completed: false },
@@ -37,7 +37,7 @@ function HomePage() {
 
   return (
     <View style={styles.container}>
-      <TopBar></TopBar> 
+      <TopBar navigation={navigation} />
       <Text style={styles.subtitle}>Objetivos</Text>
       <FlatList
         style={styles.tasklist}
@@ -47,7 +47,7 @@ function HomePage() {
       <MenuGlobal></MenuGlobal>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
