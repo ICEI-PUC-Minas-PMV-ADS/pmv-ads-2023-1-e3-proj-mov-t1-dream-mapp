@@ -1,4 +1,4 @@
-<h1><img src="https://user-images.githubusercontent.com/86859418/235548265-56278901-3edc-4312-a2b9-f8ba6c7a6059.jpg/></h1>
+<h1><img src="https://user-images.githubusercontent.com/86859418/235548265-56278901-3edc-4312-a2b9-f8ba6c7a6059.jpg/"></h1>
 
 <h6 align="right">Criado em 26 de Fevereiro de 2023<br><a href="https://www.pucminas.br/PucVirtual/Paginas/default.aspx">PUC Minas Virtual</a></h6>
 
