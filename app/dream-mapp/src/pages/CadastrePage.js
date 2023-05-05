@@ -3,6 +3,7 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import { TextInput, Button, Headline } from 'react-native-paper';
 import theme from '../components/DefaultTheme';
 import TopBar from '../components/TopBar';
+import MenuGlobal from '../components/MenuGlobal';
 
 const Cadastre = ({navigation}) => {
 
@@ -65,7 +66,9 @@ const Cadastre = ({navigation}) => {
             </View>    
 
         </View>
+        
       </View>
+      <MenuGlobal navigation={navigation} />
     </ScrollView>
   );
 };

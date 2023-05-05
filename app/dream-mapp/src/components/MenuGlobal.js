@@ -1,12 +1,12 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity, Platform } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
-const MenuGlobal = () => {
+const MenuGlobal = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.leftIcon}>
-        <Icon name="cloud-upload-alt" size={25} color="white" />
+        <Icon name="cloud-upload-alt" size={25} color="white" onPress={() => navigation.navigate('CadastreObjetivo')} />
       </TouchableOpacity>
       <TouchableOpacity style={styles.rightIcon}>
         <Icon name="user" size={25} color="white" />
@@ -24,6 +24,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 20,
+    // position: 'absolute',
+    // bottom: 0
+    //  // Define a posição fixa para o menu apenas no Android
+    //  ...(Platform.OS === 'android' && {position: 'absolute', bottom: 0})
   },
   leftIcon: {
     marginRight: 20,

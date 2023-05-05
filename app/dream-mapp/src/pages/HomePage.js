@@ -44,7 +44,7 @@ const HomePage = ({ navigation }) => {
         data={tasks}
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}/>
-      <MenuGlobal></MenuGlobal>
+      <MenuGlobal navigation={navigation} />
     </View>
   );
 };
