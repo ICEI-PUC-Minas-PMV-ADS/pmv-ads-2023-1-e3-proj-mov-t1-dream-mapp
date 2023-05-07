@@ -294,9 +294,9 @@ Esse processo procura demosntrar as condições propostas a esses possíveis usu
 
 ## Indicadores de Desempenho
 
-Apresentamos aqui os principais indicadores de desempenhos e algumas metas a serem observados durante o processo. 
+Apresentamos aqui os principais indicadores de desempenhos e algumas metas a serem observados durante o processo de desenvolvimento do aplicativo. 
 
-Usar o seguinte modelo: 
+
 
 ![Indicadores de Desempenho](https://user-images.githubusercontent.com/102563767/229199884-90cc8773-3726-48d6-b78e-f2af4118a71d.jpg)
 
