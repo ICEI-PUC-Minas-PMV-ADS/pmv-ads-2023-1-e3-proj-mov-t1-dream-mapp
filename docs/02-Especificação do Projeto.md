@@ -280,26 +280,26 @@ A fim de buscar mais informações sobre os motivos e causas de uso dessas pesso
 
 “Pensando nisso a GRAP-Soluções Digitais desenvolveu o App Dream_Mapp, que busca justamente auxiliar seus usuários na busca da realização de seus sonhos. É uma ferramenta que possibilita a seus usuários registrarem todos seus objetivos e metas, oferecendo como funcionalidade principal o acompanhamento e monitoramento, bem como oferecendo um painel (dashboard) com a evolução e conclusão dos objetivos traçados. Oferece também outra funcionalidade contendo “Indicadores de Desempenho” que indicarão os níveis de efícácia e eficiencia atingidos a cada interação do usuário com o aplicativo.” 
 
-### Processo 1 – NOME DO PROCESSO
+### Processo 1 – CONTROLE DE OBJETIVOS (AS-IS)
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
+Esse processo procura demosntrar as condições atuais com que muitas pessoas controlam ou tentam controlar suas atividades diárias, diante desse cenário vislumbrou-se a possibilidade de desenvolver um aplicativo que auxilie essas pessoas para atingirem seus sonhos através do controle e monitoramento de seus objetivos e metas. 
 
 ![Processo 1](https://user-images.githubusercontent.com/102563767/229199179-5bdf8cf3-973c-4594-af82-21f4a1c6e31b.jpg)
 
-### Processo 2 – NOME DO PROCESSO
+### Processo 2 – ONTROLE DE OBJETIVOS (TO-BE)
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
+Esse processo procura demosntrar as condições propostas a esses possíveis usuários, para que possam controlar suas atividades diárias, através do aplicativo "Dream-Mapp", aplicativo este que as auxiliará no atingimento de seus sonhos através do controle e monitoramento de seus objetivos e metas.
 
 ![Processo 2](https://user-images.githubusercontent.com/102563767/229199752-7f9d4d8a-d126-418b-8ab8-fd591a022a84.jpg)
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
+Apresentamos aqui os principais indicadores de desempenhos e algumas metas a serem observados durante o processo. 
 
 Usar o seguinte modelo: 
 
 ![Indicadores de Desempenho](https://user-images.githubusercontent.com/102563767/229199884-90cc8773-3726-48d6-b78e-f2af4118a71d.jpg)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
+
 
 ## Requisitos
 
