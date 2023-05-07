@@ -7,70 +7,87 @@ import MenuGlobal from '../components/MenuGlobal';
 
 const CadastreObjetivo = ({ navigation }) => {
 
-    const [Dojetivo, setDobjetivo] = useState('');
-    const [Ddescricao, setDdescricao] = useState('');
+  const [Dojetivo, setDobjetivo] = useState('');
+  const [Ddescricao, setDdescricao] = useState('');
 
-    return (
-        <ScrollView keyboardShouldPersistTaps="handled">
-        <View style={styles.container}>
+  return (
+      <ScrollView keyboardShouldPersistTaps="handled">
         <TopBar navigation={navigation} />
-        <View style={styles.content}>
-            <View style={styles.form}>
-              <Headline style={styles.title}> Cadastre-se </Headline>
+        <View style={styles.container}>
+          <View style={styles.form}>
+
+            <Headline style={styles.title}> Cadastro de Objetivos </Headline>
+
+            <TextInput
+              mode="outlined"
+              label="Título Objetivo"
+              value={Dojetivo}
+              onChangeText={(text) => setDobjetivo(text)}
+              theme={theme}
+              style={styles.input}/>
+
+            <TextInput
+              mode="outlined"
+              label="Descrição Objetivo"
+              value={Ddescricao}
+              onChangeText={(text) => setDdescricao(text)}
+              theme={theme}
+              style={styles.input}/>
+
               <TextInput
-                mode="outlined"
-                label="Título Objetivo"
-                value={Dojetivo}
-                onChangeText={(text) => setDobjetivo(text)}
-                theme={theme}
-                style={styles.input}/>
-              <TextInput
-                mode="outlined"
-                label="Título Descrição"
-                value={Ddescricao}
-                onChangeText={(text) => setDdescricao(text)}
-                theme={theme}
-                style={styles.input}/>
-              <View style={styles.btnCadastrarObjOrientacao}>
-                <Button
-                  mode="contained"
-                  onPress={() => navigation.navigate('Home')}
-                  contentStyle={styles.button}
-                  labelStyle={styles.buttonLabel}
-                  theme={theme}>
-                  Cadastrar Objetivo
-                </Button>
-              </View>
+              mode="outlined"
+              label="Título da Meta"
+              value={Dojetivo}
+              onChangeText={(text) => setDobjetivo(text)}
+              theme={theme}
+              style={styles.input}/>
+
+            <TextInput
+              mode="outlined"
+              label="Descrição Meta"
+              value={Ddescricao}
+              onChangeText={(text) => setDdescricao(text)}
+              theme={theme}
+              style={styles.input}/>
+              
+            <View style={styles.btnCadastrarObjOrientacao}>
+              <Button
+                mode="contained"
+                onPress={() => navigation.navigate('Home')}
+                contentStyle={styles.button}
+                labelStyle={styles.buttonLabel}
+                theme={theme}>
+                Cadastrar Objetivo
+              </Button>
             </View>
+
+          </View>
+
         </View>
         <MenuGlobal navigation={navigation} />
-        </View>
-        
-       </ScrollView>
-    );
+      </ScrollView>
+  );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.colors.background,
-  },
-  content: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-  form: {
     width: '100%',
+    paddingTop: 10,
     paddingLeft: 30,
     paddingRight: 30,
+    backgroundColor: theme.colors.background,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
-    marginTop: 20,
-    marginBottom: 10,
     fontWeight: 'bold',
     fontSize: 24,
     color: theme.colors.primary,
     alignSelf: 'center',
+  },
+  form: {
+    width: '100%',
   },
   label: {
     fontSize: 16,
@@ -82,13 +99,6 @@ const styles = StyleSheet.create({
   },
   btnCadastrarObjOrientacao: {
     marginTop: 50,
-  },
-  button: {
-    height: 50,
-    borderRadius: 30,
-  },
-  buttonLabel: {
-    fontSize: 16,
   },
 });
 

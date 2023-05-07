@@ -85,8 +85,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    marginTop: 20,
-    marginBottom: 10,
     fontWeight: 'bold',
     fontSize: 24,
     color: theme.colors.primary,
