@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { TextInput, Button, Headline } from 'react-native-paper';
 import theme from '../components/DefaultTheme';
+import TopBar from '../components/TopBar';
+import MenuGlobal from '../components/MenuGlobal';
 
 const Cadastre = ({navigation}) => {
 
@@ -12,9 +14,10 @@ const Cadastre = ({navigation}) => {
 
   return (
     <ScrollView keyboardShouldPersistTaps="handled">
+      <TopBar navigation={navigation} />
       <View style={styles.container}>
         <View style={styles.form}>
-
+        
         <Headline style={styles.title}> Cadastre-se </Headline>
 
             <TextInput
@@ -54,7 +57,7 @@ const Cadastre = ({navigation}) => {
             <View style={styles.btnCadastrarOrientacao} >
             <Button
             mode="contained"
-            onPress={() => navigation.navigate('Home')}
+            onPress={() => navigation.navigate('Profile')}
             contentStyle={styles.button}
             labelStyle={styles.buttonLabel}
             theme={theme}>
@@ -63,7 +66,9 @@ const Cadastre = ({navigation}) => {
             </View>    
 
         </View>
+        
       </View>
+      <MenuGlobal navigation={navigation} />
     </ScrollView>
   );
 };
@@ -71,12 +76,15 @@ const Cadastre = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 24,
-    backgroundColor: '#fff',
+    width: '100%',
+    paddingTop: 10,
+    paddingLeft: 30,
+    paddingRight: 30,
+    backgroundColor: theme.colors.background,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
-    marginTop: 170,
-    marginBottom: 10,
     fontWeight: 'bold',
     fontSize: 24,
     color: theme.colors.primary,

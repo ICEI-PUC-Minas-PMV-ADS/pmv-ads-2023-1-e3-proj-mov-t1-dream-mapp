@@ -23,8 +23,7 @@ const Login = ({navigation}) => {
             value={email}
             onChangeText={(text) => setEmail(text)}
             theme={theme}
-            style={styles.input}
-          />
+            style={styles.input}/>
 
           <TextInput
             mode="outlined"
@@ -34,8 +33,8 @@ const Login = ({navigation}) => {
             onChangeText={(text) => setPassword(text)}
             right={<TextInput.Icon name="lock" />}
             theme={theme}
-            style={styles.input}
-          />
+            style={styles.input}/>
+
           <View style={styles.btnEntrarOrientacao} >
           <Button
             mode="contained"
