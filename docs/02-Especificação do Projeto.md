@@ -274,11 +274,11 @@ A fim de buscar mais informações sobre os motivos e causas de uso dessas pesso
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+“Devido ao grande volume de atividades diárias às quais as pessoas estão submetidas, muitas não conseguem planejar e se organizar a fim de conseguirem realizar seus sonhos, muitas vezes por falta de tempo, e outras por falta de uma ferramenta que lhes ofereçam condições de se organizarem e monitorarem seus objetivos e metas rumo a estes sonhos.” 
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+“Pensando nisso a GRAP-Soluções Digitais desenvolveu o App Dream_Mapp, que busca justamente auxiliar seus usuários na busca da realização de seus sonhos. É uma ferramenta que possibilita a seus usuários registrarem todos seus objetivos e metas, oferecendo como funcionalidade principal o acompanhamento e monitoramento, bem como oferecendo um painel (dashboard) com a evolução e conclusão dos objetivos traçados. Oferece também outra funcionalidade contendo “Indicadores de Desempenho” que indicarão os níveis de efícácia e eficiencia atingidos a cada interação do usuário com o aplicativo.” 
 
 ### Processo 1 – NOME DO PROCESSO
 
