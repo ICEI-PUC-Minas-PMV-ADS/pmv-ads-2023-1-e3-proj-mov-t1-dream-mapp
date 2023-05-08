@@ -53,8 +53,178 @@ No contexto de desenvolvimento de software, qualidade pode ser entendida como um
 A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software.
 Com base nessas características e nas respectivas sub-características, identifique as sub-características que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software considerando-se alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão a equipe avaliar os objetos de interesse.
 
-> **Links Úteis**:
->
-> - [ISO/IEC 25010:2011 - Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models](https://www.iso.org/standard/35733.html/)
-> - [Análise sobre a ISO 9126 – NBR 13596](https://www.tiespecialistas.com.br/analise-sobre-iso-9126-nbr-13596/)
-> - [Qualidade de Software - Engenharia de Software 29](https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209/)
+## Qualidade de Software
+
+Conceituar qualidade de fato é uma tarefa complexa, mas ela pode ser vista como um método gerencial que através de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
+
+No contexto de desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem satisfeitas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, tal nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+
+A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software.
+Com base nessas características e nas respectivas sub-características, identifique as sub-características que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software considerando-se alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão a equipe avaliar os objetos de interesse.
+
+<table>
+  <tr>  <th> Características de Qualidade </th> 
+    <th> Sub-características de Qualidade </th> 
+   <th> Register </th>
+  <th> Login</th>
+  <th> Cadastro de Usuário </th>
+  <th> Cadastro de Objetivos </th>
+  <th> Cadastro de Metas </th>
+  <th> Home </th>
+  <th> Splash </th>
+  <th> Perfil </th></tr>
+  <tr><th rowspan="5">Funcionalidade</th>
+    <td>Adequação</td>
+    <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td></tr>
+  <tr>
+    <td>Acurácia</td>
+    <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td></tr>
+   <tr>
+    <td>Interoperabilidade</td>
+    <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td></tr>
+    <tr>
+    <td>Conformidade</td>
+    <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td></tr>
+    <tr>
+    <td>Segurança de acesso</td>
+    <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td></tr>
+   <tr><th rowspan="3">Confiabilidade</th>
+    <td>Maturidade</td>
+    <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td></tr>
+  <tr>
+    <td>Tolerâncoa a Falhas</td>
+    <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td></tr>
+   <tr>
+    <td>Recuperabilidade</td>
+    <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td></tr>
+    </tr>
+   <tr><th rowspan="4">Portabilidade</th>
+    <td>Adaptabilidade</td>
+    <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td></tr>
+  <tr>
+    <td>Capacidade para ser instalado</td>
+    <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td>
+  <td>Não</td></tr>
+   <tr>
+    <td>Conformidade</td>
+    <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td></tr>
+    <tr>
+    <td>Anasibilidade</td>
+    <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td></tr>
+  <tr><th rowspan="3">Manutenibilidade</th>
+    <td>Modificabilidade</td>
+    <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td></tr>
+  <tr>
+    <td>Estabilidade</td>
+    <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td></tr>
+   <tr>
+    <td>Testabilidade</td>
+    <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td>
+  <td>Sim</td></tr>
+ 
+*Justificativa*
+
+Foram escolhidas estas caracteristicas e sub-características por entendermos que são os essenciais para o fluxo do projeto e seu sucesso no momento da entrega para o usuário. Assim, foi observado a tecnologia disponível para o desenvolvimento e sua finalidade.
