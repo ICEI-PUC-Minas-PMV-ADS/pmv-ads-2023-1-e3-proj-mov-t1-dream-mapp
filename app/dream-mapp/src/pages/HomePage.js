@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { Avatar, ListItem } from 'react-native-elements';
+import { View, Text, StyleSheet,ScrollView, FlatList } from 'react-native';
 import TopBar from '../components/TopBar';
 import MenuGlobal from '../components/MenuGlobal';
 import Objetivo from '../components/Objetivo';
+import theme from '../components/DefaultTheme';
 
 const HomePage = ({ navigation }) => {
   const tasks = [
@@ -38,12 +38,14 @@ const HomePage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TopBar navigation={navigation} />
+      <View style={styles.containerContent}>
       <Text style={styles.subtitle}>Objetivos</Text>
       <FlatList
         style={styles.tasklist}
         data={tasks}
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}/>
+        </View>
       <MenuGlobal navigation={navigation} />
     </View>
   );
@@ -53,8 +55,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    paddingTop: 40,
+    paddingLeft: 30,
+    paddingRight: 30,
   },
+  containerContent: {
+    flex: 1,
+    width: '100%',
+    paddingTop: 0,
+    paddingLeft: 30,
+    paddingRight: 30,
+    backgroundColor: theme.colors.background,
+    alignItems: 'center',
+    justifyContent: 'center',
+    },
   subtitle: {
     fontSize: 20,
     fontWeight: 'bold',

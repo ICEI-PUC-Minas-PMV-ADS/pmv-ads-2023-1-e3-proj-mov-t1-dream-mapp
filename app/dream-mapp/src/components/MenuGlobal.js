@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Platform } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Platform } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 const MenuGlobal = ({ navigation }) => {
@@ -24,8 +24,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 20,
-    // position: 'absolute',
-    // bottom: 0
+    // position: 'relative',
+    position: 'absolute',
+    bottom: 0,
     //  // Define a posição fixa para o menu apenas no Android
     //  ...(Platform.OS === 'android' && {position: 'absolute', bottom: 0})
   },

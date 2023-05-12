@@ -15,7 +15,7 @@ const TopBar = ({ navigation }) => {
             </View>
             <View style={styles.positionIcon}>
             <TouchableOpacity style={styles.leftIcon}>
-            <Icon name="cog" size={25} color="white" onPress={() => navigation.navigate('Cadastre')} />
+            <Icon name="cog" size={25} color="white" onPress={() => navigation.navigate('Profile')} />
             </TouchableOpacity>
             </View>
         </View>
@@ -24,13 +24,17 @@ const TopBar = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     containerTopBar: {
-        position: 'relative',
-        flex: 1,
+        // position: 'relative',
+        position: 'absolute',
+        // flex: 1,
         flexDirection: 'row',
         justifyContent: "flex-start",
         alignItems: "center",
+        top: 0,
+        left: 0,
+        right: 0,
         paddingTop: 1,
-        height: 300,
+        height: 800,
         maxHeight: '14%',
         width: '100%',
         backgroundColor: '#4A59E3',
