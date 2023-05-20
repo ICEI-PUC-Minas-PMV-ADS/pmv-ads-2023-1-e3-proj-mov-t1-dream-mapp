@@ -1,30 +1,112 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef  } from 'react';
+import { db } from '../DB/firebase';
+import { collection, addDoc, onSnapshot } from 'firebase/firestore';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+// import ToastProvider, { showToast } from 'react-native-toast-message';
 import { View, StyleSheet, ScrollView, FlatList } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { TextInput, Button, Headline } from 'react-native-paper';
 import Icon from "react-native-vector-icons/FontAwesome5";
 import theme from '../components/DefaultTheme';
 import TopBar from '../components/TopBar';
-import MenuGlobal from '../components/MenuGlobal';
 import Meta from '../components/Meta';
 
-const CadastreObjetivo = ({ navigation }) => {
+const CadastreObjetivo = ({ navigation}) => {
   const [Dojetivo, setDobjetivo] = useState('');
   const [Ddescricao, setDdescricao] = useState('');
   const [showMetaCampos, setShowMetaCampos] = useState(false);
   const [metaTitulo, setMetaTitulo] = useState('');
   const [metaDescricao, setMetaDescricao] = useState('');
+  const [metaList, setMetaList] = useState([]);
   const [containerPaddingBottom, setContainerPaddingBottom] = useState(433);
+  const [objetivoCadastrado, setObjetivoCadastrado] = useState(false);
+  const [showObjetivoList, setShowObjetivoList] = useState(false);
+  const objetivoIdRef = useRef(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const adicionarObjetivo = async () => {
+
+    if (Dojetivo.trim() === '' || Ddescricao.trim() === '') {
+      console.log('Preencha todos os campos obrigatórios!');
+      return;
+    }
+
+    if (isLoading) {
+      return; // Evita a adição duplicada enquanto o processo estiver em andamento
+    }
+    setIsLoading(true);
+
+    let objetivoId;
+    const novoObjetivo = {
+      title: Dojetivo,
+      description: Ddescricao,
+      percentage: null,
+      completed: false,
+    };
+  
+    try {
+      const docRef = await addDoc(collection(db, 'objetivo'), novoObjetivo);
+      objetivoId = docRef.id;
+      objetivoIdRef.current = objetivoId;
+      console.log('Objetivo adicionado com ID:', objetivoId);
+      setDobjetivo(novoObjetivo.title);
+      setDdescricao(novoObjetivo.description);
+      adicionarMeta(objetivoId);
+      setObjetivoCadastrado(true);
+      setShowObjetivoList(true);
+    } catch (error) {
+      console.error('Erro ao adicionar o objetivo:', error);
+      setDobjetivo('');
+      setDdescricao('');
+    }
+    setIsLoading(false);
+  };
+
+  const adicionarMeta = async (objetivoId) => {
+
+    if (metaTitulo.trim() === '' || metaDescricao.trim() === '') {
+      console.log('Preencha todos os campos obrigatórios!');
+      return;
+    }
+
+    if (isLoading) {
+      return; // Evita a adição duplicada enquanto o processo estiver em andamento
+    }
+    setIsLoading(true);
+
+    if (!objetivoCadastrado) {
+      // Exibir toast informando para cadastrar o objetivo antes de adicionar metas
+      console.log('Cadastre o seu objetivo e adicione metas para ele!');
+      return;
+    }
+
+    const novaMeta = {
+      title: metaTitulo,
+      description: metaDescricao,
+      completed: false,
+      objetivoId: objetivoId,
+    };
+  
+    try {
+      const docRef = await addDoc(collection(db, 'meta'), novaMeta);
+      console.log('Meta adicionada com ID:', docRef.id);
+      // Restante do código...
+
+      setMetaTitulo('');
+      setMetaDescricao('');
+      // setMetaList([...metaList, novaMeta]);
+    } catch (error) {
+      console.error('Erro ao adicionar a meta:', error);
+      setMetaTitulo('');
+      setMetaDescricao('');
+    }
+    setIsLoading(false);
+  }
 
   const toggleMetaCampos = () => {
     setShowMetaCampos(!showMetaCampos);
     setContainerPaddingBottom(showMetaCampos ? 433 : 263);
   };
-
-  const tasks = [
-    { id: 1, title: 'Meta #01', description: 'Descrição do Meta #01', completed: false },
-    { id: 2, title: 'Meta #02', description: 'Descrição do Meta #02', completed: false },
-  ];
 
   const renderItem = ({ item }) => (
     <Meta 
@@ -35,6 +117,35 @@ const CadastreObjetivo = ({ navigation }) => {
       onCompletePress={() => console.log('Concluir objetivo')}
     />
   );
+  
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, 'objetivo'), (querySnapshot) => {
+      const objetivoData = [];
+      querySnapshot.forEach((doc) => {
+        const objetivo = doc.data();
+        if (objetivo.title && objetivo.description) {
+          objetivoData.push(objetivo);
+        }
+      });
+    });
+  
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(collection(db, 'meta'), (querySnapshot) => {
+      const metaData = [];
+      querySnapshot.forEach((doc) => {
+        const meta = doc.data();
+        if (meta.title && meta.description) {
+          metaData.push(meta);
+        }
+      });
+      setMetaList(metaData);
+    });
+  
+    return () => unsubscribe();
+  }, []);
 
   return (
     <ScrollView keyboardShouldPersistTaps="handled">
@@ -59,6 +170,34 @@ const CadastreObjetivo = ({ navigation }) => {
               onChangeText={(text) => setDdescricao(text)}
               theme={theme}
               style={styles.input}/>
+
+            {!showObjetivoList ? (
+              <View style={styles.btnCadastrarObjOrientacao}>
+                <Button
+                  mode="contained"
+                  onPress={adicionarObjetivo}
+                  contentStyle={styles.button}
+                  labelStyle={styles.buttonLabel}
+                  theme={theme}
+                  disabled={isLoading}
+                >
+                  Cadastrar Objetivo
+                </Button>
+              </View>
+            ) : (
+              <View style={styles.btnCadastrarObjOrientacao}>
+                <Button
+                  mode="contained"
+                  onPress={() => navigation.navigate('Home')}
+                  contentStyle={styles.button}
+                  labelStyle={styles.buttonLabel}
+                  theme={theme}
+                  disabled={isLoading}
+                >
+                  Ver lista de objetivos
+                </Button>
+              </View>
+            )}
 
             <View style={styles.container2}>
               <Headline style={styles.titleMeta}> Cadastrar Meta </Headline>
@@ -88,39 +227,32 @@ const CadastreObjetivo = ({ navigation }) => {
                   onChangeText={(text) => setMetaDescricao(text)}
                   theme={theme}
                   style={styles.input}/>
+
                 <View style={styles.btnAdicionarMeta}>
                 <Button
                   mode="contained"
-                  onPress={() => navigation.navigate('Home')}
+                  onPress={() => adicionarMeta(objetivoIdRef.current)}
                   contentStyle={styles.button2}
                   labelStyle={styles.buttonLabel2}
-                  theme={theme}>
+                  theme={theme}
+                  disabled={isLoading}>
                   Adicionar Meta
                 </Button>
                 </View>
-              </React.Fragment>
-              )}
 
+              </React.Fragment>
+            )}
+          {metaList.filter(meta => meta.objetivoId === objetivoIdRef.current).length > 0 && (
             <FlatList
               style={styles.tasklist}
-              data={tasks}
+              data={metaList.filter(meta => meta.objetivoId === objetivoIdRef.current)}
               renderItem={renderItem}
-              keyExtractor={item => item.id.toString()}/>
-
-            <View style={styles.btnCadastrarObjOrientacao}>
-            <Button
-                mode="contained"
-                onPress={() => navigation.navigate('Home')}
-                contentStyle={styles.button}
-                labelStyle={styles.buttonLabel}
-                theme={theme}>
-                Cadastrar Objetivo
-            </Button>
-            </View>
+              keyExtractor={(item, index) => index.toString()}
+            />
+          )}
 
           </View>
         </View>
-      <MenuGlobal navigation={navigation} />
      </KeyboardAwareScrollView>
     </ScrollView>
     );
@@ -215,6 +347,3 @@ const styles = StyleSheet.create({
   });
   
 export default CadastreObjetivo;
-  
-                
-

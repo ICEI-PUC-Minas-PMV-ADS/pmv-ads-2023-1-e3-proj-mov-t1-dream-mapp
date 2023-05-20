@@ -7,7 +7,7 @@ function Objetivo({ title, description, percentage, onEditPress, onCompletePress
   return (
     <TouchableOpacity style={styles.container}>
       <View style={{ width: progressSize, height: progressSize }}>
-        <ContPorcentagem percentage={percentage} size={progressSize} />
+      <ContPorcentagem percentage={percentage || 0} size={progressSize} />
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
