@@ -38,6 +38,7 @@ const HomePage = ({ navigation }) => {
 
   const renderItem = ({ item }) => (
     <Objetivo 
+      objetivoId={item.id}
       title={item.title} 
       description={item.description} 
       percentage={item.percentage} 
