@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    paddingTop: 10,
+    paddingTop: 192.5,
+    paddingBottom:192.5,
     paddingLeft: 30,
     paddingRight: 30,
     backgroundColor: theme.colors.background,

@@ -1,14 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
-import ContPorcentagem from './ContPorcentagem';
 
-function Objetivo({ title, description, percentage, onEditPress, onCompletePress, progressSize = 50 }) {
+function Meta({ title, description, onEditPress, onCompletePress}) {
   return (
     <TouchableOpacity style={styles.container}>
-      <View style={{ width: progressSize, height: progressSize }}>
-      <ContPorcentagem percentage={percentage || 0} size={progressSize} />
-      </View>
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.description}>{description}</Text>
@@ -65,4 +61,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Objetivo;
+export default Meta;

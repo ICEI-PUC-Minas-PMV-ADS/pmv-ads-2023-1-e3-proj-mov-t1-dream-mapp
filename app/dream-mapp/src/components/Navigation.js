@@ -16,7 +16,8 @@ const Stack = createStackNavigator();
 
 function Navigation() {
   return (
-    <Stack.Navigator headerMode="none">
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Login" component={LoginPage} />
       <Stack.Screen name="Cadastre" component={CadastrePage} />
@@ -25,6 +26,7 @@ function Navigation() {
       <Stack.Screen name="MenuGlobal" component={MenuGlobal} />
       <Stack.Screen name="CadastreObjetivo" component={CadastreDreamPage} />
       <Stack.Screen name="Home" component={HomePage} />
+      
     </Stack.Navigator>
   );
 }
