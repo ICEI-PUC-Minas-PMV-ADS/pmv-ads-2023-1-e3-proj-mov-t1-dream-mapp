@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Appbar, Provider as PaperProvider } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import ProfilePage from './src/pages/ProfilePage';
 
 import NavigationContainer from './src/components/NavigationContainer';
 import Navigation from './src/components/Navigation';
@@ -10,6 +11,7 @@ import theme from './src/components/DefaultTheme';
 
 export default function App() {
 
+<<<<<<< HEAD
   return (
     <NavigationContainer>
     <SafeAreaProvider>
@@ -20,12 +22,16 @@ export default function App() {
     </NavigationContainer>
   );
 }
+=======
+  const _goBack = () => console.log('Went back');
+  const _handleSearch = () => console.log('Searching');
+  const _handleMore = () => console.log('Shown more');
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+ 
+  return (
+>>>>>>> feature/profile-page
+
+    <ProfilePage />
+  );
+};
+
