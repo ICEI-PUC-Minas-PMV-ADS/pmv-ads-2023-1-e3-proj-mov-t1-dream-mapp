@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef  } from 'react';
 import { db } from '../DB/firebase';
 import { collection, addDoc, onSnapshot } from 'firebase/firestore';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 // import ToastProvider, { showToast } from 'react-native-toast-message';
 import { View, StyleSheet, ScrollView, FlatList } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';

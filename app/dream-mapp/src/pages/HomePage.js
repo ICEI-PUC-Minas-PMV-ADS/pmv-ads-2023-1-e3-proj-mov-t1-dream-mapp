@@ -14,7 +14,8 @@ const fetchTasks = async (setObjetivo) => {
       id: doc.id,
       ...doc.data()
     }));
-    setObjetivo(tasksArray);
+    const filteredTasksArray = tasksArray.filter(objetivo => objetivo.title && objetivo.description);
+    setObjetivo(filteredTasksArray);
   } catch (error) {
     console.log('Error fetching tasks:', error);
   }
@@ -53,12 +54,14 @@ const HomePage = ({ navigation }) => {
       <TopBar navigation={navigation} />
       <View style={styles.containerContent}>
         <Text style={styles.subtitle}>Objetivos</Text>
+        {objetivo.length > 0 && (
         <FlatList
           style={styles.tasklist}
           data={objetivo}
           renderItem={renderItem}
           keyExtractor={item => (item.id ? item.id.toString() : '')} 
         />
+        )}
       </View>
       <MenuGlobal navigation={navigation} />
     </View>
