@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.gabrielnakhata.dreammapp"
     },
     "web": {
       "favicon": ""
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8bc70ded-7e06-4d2c-8fe4-10006e3f928d"
+      }
     }
   }
 }
