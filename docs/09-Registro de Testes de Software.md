@@ -1,12 +1,21 @@
 # Registro de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>, <a href="8-Plano de Testes de Software.md"> Plano de Testes de Software</a>
+Considerando os requisitos do projeto e os casos listados no item 08. Plano de Testes de Software, foram realizados os testes descritos abaixo:
 
-Relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado em um plano de testes pré-definido.
+![image](https://user-images.githubusercontent.com/102640910/236707613-4ea7f42e-ccd9-4900-b396-3176768afb8f.png)
 
-## Avaliação
+![image](https://user-images.githubusercontent.com/102640910/236707648-4c4871c2-1ede-4f02-be8c-a99f8521f6ae.png)
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
+![image](https://user-images.githubusercontent.com/102640910/236707686-f51e35d3-2eb4-4270-86ad-fba86655fe25.png)
 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+![image](https://user-images.githubusercontent.com/102640910/236707708-bcf160a2-ba08-470b-ac3d-6df096b2b4f0.png)
+
+![image](https://user-images.githubusercontent.com/102640910/236707727-85f782d8-e135-4d70-ad1f-180456abe955.png)
+
+![image](https://user-images.githubusercontent.com/102640910/236707781-99c091a6-a05e-4021-b23e-79130aaba218.png)
+
+![image](https://user-images.githubusercontent.com/102640910/236707917-0c16d5c9-9703-47f6-b8ef-81422365b597.png)
+
+![image](https://user-images.githubusercontent.com/102640910/236707947-0b2504a3-8d0f-4cd8-b7ef-e7069c9414c2.png)
+
+![image](https://user-images.githubusercontent.com/102640910/236707965-598bc887-4f0d-49e8-a076-d19c4f33cffc.png)

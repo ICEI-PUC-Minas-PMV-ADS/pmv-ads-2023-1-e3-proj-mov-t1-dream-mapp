@@ -6,6 +6,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import ProfilePage from './src/pages/ProfilePage';
 
 
+
 import NavigationContainer from './src/components/NavigationContainer';
 import Navigation from './src/components/Navigation';
 import theme from './src/components/DefaultTheme';
