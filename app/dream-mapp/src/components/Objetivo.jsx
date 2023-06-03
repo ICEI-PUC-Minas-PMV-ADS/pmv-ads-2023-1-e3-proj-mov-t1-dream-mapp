@@ -4,12 +4,15 @@ import { Icon } from 'react-native-elements';
 import ContPorcentagem from './ContPorcentagem';
 import Meta from '../components/Meta';
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import { db } from '../DB/firebase'; // Assuming you have imported the Firestore instance as 'db'
+import { db, auth } from '../DB/firebase'; // Assuming you have imported the Firestore instance as 'db'
 import theme from '../components/DefaultTheme';
 
 const fetchMetasByObjetivoId = async (objetivoId, setMetaList) => {
   try {
-    const q = query(collection(db, 'meta'), where('objetivoId', '==', objetivoId));
+    const q = query(collection(db, 'meta'),
+    where('objetivoId', '==', objetivoId),
+    where('userId', '==', auth.currentUser.uid) 
+    );
     const querySnapshot = await getDocs(q);
     const metasArray = querySnapshot.docs
       .map(doc => ({
@@ -55,7 +58,8 @@ function Objetivo({objetivoId, title, description, percentage, onEditPress, onCo
   };
 
   const renderItem = ({ item }) => (
-    <Meta 
+    <Meta
+      userId={item.userId}
       title={item.title} 
       description={item.description} 
       completed={item.completed} 
