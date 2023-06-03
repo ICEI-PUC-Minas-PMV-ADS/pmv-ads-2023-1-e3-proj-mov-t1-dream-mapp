@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useRef  } from 'react';
-import { db } from '../DB/firebase';
-import { collection, addDoc, onSnapshot } from 'firebase/firestore';
-// import ToastProvider, { showToast } from 'react-native-toast-message';
-import { View, StyleSheet, ScrollView, FlatList } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { db, auth } from '../DB/firebase';
+import { collection, addDoc, onSnapshot, updateDoc, doc } from 'firebase/firestore';
+import { View, StyleSheet, FlatList } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { TextInput, Button, Headline } from 'react-native-paper';
 import Icon from "react-native-vector-icons/FontAwesome5";
 import theme from '../components/DefaultTheme';
 import TopBar from '../components/TopBar';
+import MenuGlobal from '../components/MenuGlobal';
 import Meta from '../components/Meta';
+import Toast, { DURATION } from 'react-native-easy-toast';
 
 const CadastreObjetivo = ({ navigation}) => {
   const [Dojetivo, setDobjetivo] = useState('');
@@ -22,16 +23,21 @@ const CadastreObjetivo = ({ navigation}) => {
   const [showObjetivoList, setShowObjetivoList] = useState(false);
   const objetivoIdRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
+  const toastRef = useRef();
+
+  const showToast = () => {
+    toastRef.current.show('This is a toast message', DURATION.LENGTH_LONG);
+  };
 
   const adicionarObjetivo = async () => {
 
     if (Dojetivo.trim() === '' || Ddescricao.trim() === '') {
-      console.log('Preencha todos os campos obrigatórios!');
+      toastRef.current.show('Preencha todos os campos obrigatórios!', DURATION.LENGTH_LONG);
       return;
     }
 
     if (isLoading) {
-      return; // Evita a adição duplicada enquanto o processo estiver em andamento
+      return; 
     }
     setIsLoading(true);
 
@@ -41,20 +47,21 @@ const CadastreObjetivo = ({ navigation}) => {
       description: Ddescricao,
       percentage: null,
       completed: false,
+      userId: auth.currentUser.uid,
     };
   
     try {
       const docRef = await addDoc(collection(db, 'objetivo'), novoObjetivo);
       objetivoId = docRef.id;
       objetivoIdRef.current = objetivoId;
-      console.log('Objetivo adicionado com ID:', objetivoId);
       setDobjetivo(novoObjetivo.title);
       setDdescricao(novoObjetivo.description);
       adicionarMeta(objetivoId);
       setObjetivoCadastrado(true);
       setShowObjetivoList(true);
+      toastRef.current.show('Objetivo adicionado!', DURATION.LENGTH_LONG);
     } catch (error) {
-      console.error('Erro ao adicionar o objetivo:', error);
+      toastRef.current.show('Erro ao adicionar o objetivo!', DURATION.LENGTH_LONG);
       setDobjetivo('');
       setDdescricao('');
     }
@@ -63,39 +70,42 @@ const CadastreObjetivo = ({ navigation}) => {
 
   const adicionarMeta = async (objetivoId) => {
 
+    if (!objetivoCadastrado) {
+      toastRef.current.show('Cadastre o seu objetivo e adicione metas para ele!', DURATION.LENGTH_LONG);
+
+      return;
+    }
+
     if (metaTitulo.trim() === '' || metaDescricao.trim() === '') {
-      console.log('Preencha todos os campos obrigatórios!');
+      toastRef.current.show('Preencha todos os campos obrigatórios!', DURATION.LENGTH_LONG);
+
       return;
     }
 
     if (isLoading) {
-      return; // Evita a adição duplicada enquanto o processo estiver em andamento
-    }
-    setIsLoading(true);
 
-    if (!objetivoCadastrado) {
-      // Exibir toast informando para cadastrar o objetivo antes de adicionar metas
-      console.log('Cadastre o seu objetivo e adicione metas para ele!');
       return;
     }
+    setIsLoading(true);
 
     const novaMeta = {
       title: metaTitulo,
       description: metaDescricao,
       completed: false,
       objetivoId: objetivoId,
+      userId: auth.currentUser.uid,
     };
   
     try {
       const docRef = await addDoc(collection(db, 'meta'), novaMeta);
-      console.log('Meta adicionada com ID:', docRef.id);
-      // Restante do código...
+      await updateDoc(doc(db, 'meta', docRef.id), { userId: auth.currentUser.uid });
+      toastRef.current.show('Meta adicionada!', DURATION.LENGTH_LONG);
 
       setMetaTitulo('');
       setMetaDescricao('');
-      // setMetaList([...metaList, novaMeta]);
+
     } catch (error) {
-      console.error('Erro ao adicionar a meta:', error);
+      toastRef.current.show('Erro ao adicionar a meta!', DURATION.LENGTH_LONG);
       setMetaTitulo('');
       setMetaDescricao('');
     }
@@ -147,10 +157,15 @@ const CadastreObjetivo = ({ navigation}) => {
   }, []);
 
   return (
-    <ScrollView keyboardShouldPersistTaps="handled">
+    <KeyboardAwareScrollView keyboardShouldPersistTaps="handled">
       <TopBar navigation={navigation} />
-      <KeyboardAwareScrollView contentContainerStyle={[styles.container, { paddingBottom: containerPaddingBottom }]}>
         <View style={styles.containerContent}>
+          <Toast
+          ref={toastRef}
+          style={styles.toastContainer}
+          textStyle={styles.toastText}
+          opacity={0.7}
+            />
           <View style={styles.form}>
             <Headline style={styles.title2}> Cadastro de Objetivos </Headline>
 
@@ -209,55 +224,61 @@ const CadastreObjetivo = ({ navigation}) => {
               </View>
             </View>
 
-            {showMetaCampos && (
-              <React.Fragment>
-                <TextInput
-                  mode="outlined"
-                  label="Título da Meta"
-                  value={metaTitulo}
-                  onChangeText={(text) => setMetaTitulo(text)}
-                  theme={theme}
-                  style={styles.input}/>
+              <View style={styles.containerFlat}>
+                <View style={styles.frame}>
+                {showMetaCampos && (
+                  <React.Fragment>
+                    <TextInput
+                      mode="outlined"
+                      label="Título da Meta"
+                      value={metaTitulo}
+                      onChangeText={(text) => setMetaTitulo(text)}
+                      theme={theme}
+                      style={styles.input}/>
 
-                <TextInput
-                  mode="outlined"
-                  label="Descrição Meta"
-                  value={metaDescricao}
-                  onChangeText={(text) => setMetaDescricao(text)}
-                  theme={theme}
-                  style={styles.input}/>
+                    <TextInput
+                      mode="outlined"
+                      label="Descrição Meta"
+                      value={metaDescricao}
+                      onChangeText={(text) => setMetaDescricao(text)}
+                      theme={theme}
+                      style={styles.input}/>
 
-                <View style={styles.btnAdicionarMeta}>
-                <Button
-                  mode="contained"
-                  onPress={() => adicionarMeta(objetivoIdRef.current)}
-                  contentStyle={styles.button2}
-                  labelStyle={styles.buttonLabel2}
-                  theme={theme}
-                  disabled={isLoading}>
-                  Adicionar Meta
-                </Button>
+                    <View style={styles.btnAdicionarMeta}>
+                    <Button
+                      mode="contained"
+                      onPress={() => adicionarMeta(objetivoIdRef.current)}
+                      contentStyle={styles.button2}
+                      labelStyle={styles.buttonLabel2}
+                      theme={theme}
+                      disabled={isLoading}>
+                      Adicionar Meta
+                    </Button>
+                    </View>
+
+                  </React.Fragment>
+                )}
+                  {metaList.filter(meta => meta.objetivoId === objetivoIdRef.current && meta.userId === auth.currentUser.uid).length > 0 && (
+                    <FlatList
+                      style={styles.tasklist}
+                      data={metaList.filter(meta => meta.objetivoId === objetivoIdRef.current && meta.userId === auth.currentUser.uid)}
+                      renderItem={renderItem}
+                      keyExtractor={(item, index) => index.toString()}
+                    />
+                  )}
                 </View>
-
-              </React.Fragment>
-            )}
-          {metaList.filter(meta => meta.objetivoId === objetivoIdRef.current).length > 0 && (
-            <FlatList
-              style={styles.tasklist}
-              data={metaList.filter(meta => meta.objetivoId === objetivoIdRef.current)}
-              renderItem={renderItem}
-              keyExtractor={(item, index) => index.toString()}
-            />
-          )}
-
-          </View>
+              </View>
+      </View>
+        </View>
+        <View style={styles.containerMenuGlobal}>
+        <MenuGlobal navigation={navigation}/>
         </View>
      </KeyboardAwareScrollView>
-    </ScrollView>
     );
   };
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     width: '100%',
@@ -272,7 +293,7 @@ const styles = StyleSheet.create({
   containerContent: {
     flex: 1,
     width: '100%',
-    paddingTop: 0,
+    paddingTop: 110,
     paddingLeft: 30,
     paddingRight: 30,
     backgroundColor: theme.colors.background,
@@ -343,6 +364,36 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     },
+    containerFlat: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    frame: {
+      width: 300,
+      height: 400,
+      borderWidth: 0,
+      overflow: 'hidden',
+    },
+    containerMenuGlobal: {
+      width: '100%',
+      height: 53,
+  },
+  toastContainer: {
+    position: 'absolute',
+    bottom: -85,
+    left: 20,
+    right: 20,
+    backgroundColor: theme.colors.secondary,
+    borderRadius: 30,
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+  },
+  toastText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    textAlign: 'center',
+  },
   });
   
 export default CadastreObjetivo;
