@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { db } from '../DB/firebase';
+import { db, auth } from '../DB/firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import TopBar from '../components/TopBar';
 import MenuGlobal from '../components/MenuGlobal';
@@ -14,7 +14,7 @@ const fetchTasks = async (setObjetivo) => {
       id: doc.id,
       ...doc.data()
     }));
-    const filteredTasksArray = tasksArray.filter(objetivo => objetivo.title && objetivo.description);
+    const filteredTasksArray = tasksArray.filter(objetivo => objetivo.title && objetivo.description && objetivo.userId === auth.currentUser.uid);
     setObjetivo(filteredTasksArray);
   } catch (error) {
     console.log('Error fetching tasks:', error);
@@ -40,6 +40,7 @@ const HomePage = ({ navigation }) => {
   const renderItem = ({ item }) => (
     <Objetivo 
       objetivoId={item.id}
+      userId={item.userId}
       title={item.title} 
       description={item.description} 
       percentage={item.percentage} 
@@ -57,7 +58,7 @@ const HomePage = ({ navigation }) => {
         {objetivo.length > 0 && (
         <FlatList
           style={styles.tasklist}
-          data={objetivo}
+          data={objetivo.filter(item => item.userId === auth.currentUser.uid)}
           renderItem={renderItem}
           keyExtractor={item => (item.id ? item.id.toString() : '')} 
         />
