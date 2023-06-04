@@ -6,6 +6,7 @@ import TopBar from '../components/TopBar';
 import MenuGlobal from '../components/MenuGlobal';
 import Toast, { DURATION } from 'react-native-easy-toast';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { getFirestore, setDoc, doc } from 'firebase/firestore';
 
 const Cadastre = ({ navigation }) => {
   const toastRef = useRef();
@@ -20,14 +21,20 @@ const Cadastre = ({ navigation }) => {
 
   const CadastrarUsuario = async () => {
     try {
-      const auth = getAuth(); // Obtenha a instância correta do auth
+      const auth = getAuth(); 
+      const firestore = getFirestore(); 
 
-      // Crie o usuário no Firebase Authentication
       const { user } = await createUserWithEmailAndPassword(auth, email, senha);
 
-      // Atualize o perfil do usuário com o nome
       await updateProfile(user, {
         displayName: `${nome} ${sobrenome}`,
+      });
+
+      await setDoc(doc(firestore, 'usuarios', user.uid), {
+        nome,
+        sobrenome,
+        email,
+        userId: user.uid,
       });
 
       toastRef.current.show('Usuário cadastrado com sucesso!', DURATION.LENGTH_LONG);
@@ -38,6 +45,7 @@ const Cadastre = ({ navigation }) => {
       toastRef.current.show('Preencha o formulário para cadastro', DURATION.LENGTH_LONG);
     }
   };
+
 
   return (
     <ScrollView keyboardShouldPersistTaps="handled">
