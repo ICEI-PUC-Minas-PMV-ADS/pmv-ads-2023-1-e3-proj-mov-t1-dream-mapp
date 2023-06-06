@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useRoute } from '@react-navigation/native';
 import { db, auth } from '../DB/firebase';
 import { collection, addDoc, onSnapshot, updateDoc, doc } from 'firebase/firestore';
 import { View, StyleSheet, FlatList } from 'react-native';
@@ -20,19 +21,98 @@ const CadastreObjetivo = ({ navigation}) => {
   const [metaList, setMetaList] = useState([]);
   const [containerPaddingBottom, setContainerPaddingBottom] = useState(433);
   const [objetivoCadastrado, setObjetivoCadastrado] = useState(false);
+  const [objetivoFoiEditado, setObjetivoFoiEditado] = useState(false);
   const [showObjetivoList, setShowObjetivoList] = useState(false);
   const objetivoIdRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
   const toastRef = useRef();
+  const [botaoTexto, setBotaoTexto] = useState('Cadastrar Objetivo');
+  const [botaoStyle, setBotaoStyle] = useState(styles.button);
+  const [modoEdicao, setModoEdicao] = useState(false);
+  const route = useRoute();
+  const editingObjetivo = route.params?.editingObjetivo;
+
+  const handleObjetivoPress = async () => {
+    if (modoEdicao) {
+      await objetivoEditado();
+    } else {
+      await adicionarObjetivo();
+    }
+  };
+
+  useEffect(() => {
+    if (editingObjetivo) {
+      setModoEdicao(true);
+      setDobjetivo(editingObjetivo.title);
+      setDdescricao(editingObjetivo.description);
+      objetivoIdRef.current = editingObjetivo.id;
+      setBotaoTexto('Editar Objetivo');
+      setBotaoStyle(styles.buttonEdicao);
+    }
+  }, [editingObjetivo]);
 
   const showToast = () => {
     toastRef.current.show('This is a toast message', DURATION.LENGTH_LONG);
   };
+  
+  const objetivoEditado = async () => {
+    if (Dojetivo.trim() === '' || Ddescricao.trim() === '') {
+      toastRef.current.show('Preencha todos os campos obrigatórios!', DURATION.LENGTH_LONG);
+      
+      return;
+    }
+
+    if (isLoading) {
+      return;
+    }
+    setIsLoading(true);
+  
+    const editadoObjetivo = {
+      title: Dojetivo,
+      description: Ddescricao,
+      percentage: null,
+      completed: false,
+      userId: auth.currentUser.uid,
+    };
+
+    let houveAlteracao = true;
+
+    if (Dojetivo === editingObjetivo.title && Ddescricao === editingObjetivo.description) {
+      houveAlteracao = false;
+    }
+  
+    try {
+      if (houveAlteracao) {
+      await updateDoc(doc(db, 'objetivo', objetivoIdRef.current), editadoObjetivo);
+     }
+      setDobjetivo(editadoObjetivo.title);
+      setDdescricao(editadoObjetivo.description);
+      const objetivoId = objetivoIdRef.current;
+      adicionarMeta(objetivoId);
+      setObjetivoFoiEditado(true);
+      setShowObjetivoList(true);
+      if (houveAlteracao) {
+      toastRef.current.show('Objetivo atualizado!', DURATION.LENGTH_LONG);
+      } else {
+      toastRef.current.show('Objetivo atualizado sem alterações!', DURATION.LENGTH_LONG);  
+      }
+    } catch (error) {
+      toastRef.current.show('Erro ao atualizar o objetivo!', DURATION.LENGTH_LONG);
+    }
+  
+    setIsLoading(false);
+  };
+  
 
   const adicionarObjetivo = async () => {
 
     if (Dojetivo.trim() === '' || Ddescricao.trim() === '') {
       toastRef.current.show('Preencha todos os campos obrigatórios!', DURATION.LENGTH_LONG);
+      return;
+    }
+  
+    if (modoEdicao) {
+      objetivoEditado();
       return;
     }
 
@@ -70,9 +150,14 @@ const CadastreObjetivo = ({ navigation}) => {
 
   const adicionarMeta = async (objetivoId) => {
 
-    if (!objetivoCadastrado) {
-      toastRef.current.show('Cadastre o seu objetivo e adicione metas para ele!', DURATION.LENGTH_LONG);
+    if (modoEdicao && !objetivoFoiEditado) {
+      toastRef.current.show('Edite o seu objetivo e adicione metas para ele!', DURATION.LENGTH_LONG);
+      // setObjetivoFoiEditado(true);
+      return;
+    }
 
+    if (!modoEdicao && !objetivoCadastrado) {
+      toastRef.current.show('Cadastre o seu objetivo e adicione metas para ele!', DURATION.LENGTH_LONG);
       return;
     }
 
@@ -83,7 +168,6 @@ const CadastreObjetivo = ({ navigation}) => {
     }
 
     if (isLoading) {
-
       return;
     }
     setIsLoading(true);
@@ -139,7 +223,7 @@ const CadastreObjetivo = ({ navigation}) => {
     });
   
     return () => unsubscribe();
-  }, []);
+  }, [modoEdicao]);
 
   useEffect(() => {
     const unsubscribe = onSnapshot(collection(db, 'meta'), (querySnapshot) => {
@@ -154,7 +238,7 @@ const CadastreObjetivo = ({ navigation}) => {
     });
   
     return () => unsubscribe();
-  }, []);
+  }, [modoEdicao]);
 
   return (
     <KeyboardAwareScrollView keyboardShouldPersistTaps="handled">
@@ -189,13 +273,13 @@ const CadastreObjetivo = ({ navigation}) => {
               <View style={styles.btnCadastrarObjOrientacao}>
                 <Button
                   mode="contained"
-                  onPress={adicionarObjetivo}
-                  contentStyle={styles.button}
+                  onPress={handleObjetivoPress}
+                  contentStyle={botaoStyle}
                   labelStyle={styles.buttonLabel}
                   theme={theme}
                   disabled={isLoading}
                 >
-                  Cadastrar Objetivo
+                  {botaoTexto}
                 </Button>
               </View>
             ) : (
@@ -317,6 +401,9 @@ const styles = StyleSheet.create({
     },
   button2: {
     backgroundColor: theme.colors.secondary,
+    },
+  buttonEdicao: {
+    backgroundColor: theme.colors.tercyary,
     },
   buttonLabel2: {
     color: theme.colors.buttonText,

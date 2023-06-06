@@ -23,6 +23,10 @@ const fetchTasks = async (setObjetivo) => {
 
 const HomePage = ({ navigation }) => {
   const [objetivo, setObjetivo] = useState([]);
+  const [editingObjetivo, setEditingObjetivo] = useState(null);
+  const [titulo, setTitulo] = useState('');
+  const [descricao, setDescricao] = useState('');
+
 
   useEffect(() => {
     fetchTasks(setObjetivo);
@@ -45,7 +49,10 @@ const HomePage = ({ navigation }) => {
       description={item.description} 
       percentage={item.percentage} 
       completed={item.completed} 
-      onEditPress={() => console.log('Editar objetivo')} 
+      onEditPress={() => {
+        setEditingObjetivo(item);
+        navigation.navigate('CadastreObjetivo', {editingObjetivo : item});
+      }} 
       onCompletePress={() => console.log('Concluir objetivo')}
     />
   );
