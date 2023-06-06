@@ -20,7 +20,8 @@ const TopBar = ({ navigation }) => {
           const { nome, sobrenome } = userData;
           const fullName = `${nome} ${sobrenome}`;
           setUserName(fullName);
-        } else {
+        } 
+        else {
           setUserName('UserName');
         }
       }
