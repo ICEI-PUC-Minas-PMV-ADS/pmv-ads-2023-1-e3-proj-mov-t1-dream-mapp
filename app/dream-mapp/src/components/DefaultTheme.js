@@ -6,6 +6,7 @@ const theme = {
     ...DefaultTheme.colors,
     primary: '#4A59E3',
     secondary: '#542EFF',
+    tercyary: '#FF1970',
     placeholder: '#4A59E3',
     text: '#4A59E3',
     background: '#fff',
