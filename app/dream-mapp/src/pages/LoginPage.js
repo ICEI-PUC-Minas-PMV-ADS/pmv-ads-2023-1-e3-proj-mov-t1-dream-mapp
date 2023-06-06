@@ -38,17 +38,17 @@ const handleForgotPassword = async () => {
 
   const handleEmailLogin = async () => {
     try {
-      setIsLoading(true); // Define o estado isLoading para true
+      setIsLoading(true); 
 
       await signInWithEmailAndPassword(auth, email, password);
-      // Autenticação bem-sucedida, redirecione para a tela desejada
 
       setTimeout(() => {
-        setIsLoading(false); // Define o estado isLoading de volta para false após 2 segundos
+        setIsLoading(false); 
         navigation.navigate('Home');
       }, 1800);
+
     } catch (error) {
-      setIsLoading(false); // Define o estado isLoading de volta para false em caso de erro
+      setIsLoading(false); 
       console.log('Erro ao fazer login:', error);
       toastRef.current.show('Erro ao fazer login', DURATION.LENGTH_LONG);
     }
