@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { db, auth } from '../DB/firebase';
-import { collection, addDoc, onSnapshot, updateDoc, doc } from 'firebase/firestore';
+import { getDocs, query, where, collection, addDoc, onSnapshot, updateDoc, doc } from 'firebase/firestore';
 import { View, StyleSheet, FlatList } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { TextInput, Button, Headline } from 'react-native-paper';
@@ -23,14 +23,58 @@ const CadastreObjetivo = ({ navigation}) => {
   const [objetivoCadastrado, setObjetivoCadastrado] = useState(false);
   const [objetivoFoiEditado, setObjetivoFoiEditado] = useState(false);
   const [showObjetivoList, setShowObjetivoList] = useState(false);
+  const [isEditingMeta, setIsEditingMeta] = useState(false);
+  const [showAddButtonMeta, setShowAddButtonMeta] = useState(true);
+
   const objetivoIdRef = useRef(null);
+  const metaIdRef = useRef(null);
   const [isLoading, setIsLoading] = useState(false);
   const toastRef = useRef();
   const [botaoTexto, setBotaoTexto] = useState('Cadastrar Objetivo');
+  // const [botaoTextoEditar, setBotaoTextoEditar] = useState('Adicionar meta');
   const [botaoStyle, setBotaoStyle] = useState(styles.button);
   const [modoEdicao, setModoEdicao] = useState(false);
   const route = useRoute();
   const editingObjetivo = route.params?.editingObjetivo;
+  const [editingMeta, setEditingMeta] = useState(null);
+  const [metaEditingMode, setMetaEditingMode] = useState(false);
+  const [updateMetas, setUpdateMetas] = useState(false);
+
+  const getMetaIdByObjetivoId = async (objetivoId, metaTitulo, metaDescricao) => {
+
+    const querySnapshot = await getDocs(
+      query(
+        collection(db, 'meta'),
+        where('objetivoId', '==', objetivoId),
+        where('title', '==', metaTitulo),
+        where('description', '==', metaDescricao)
+      )
+    );
+  
+    if (querySnapshot.empty) {
+      return null;
+    }
+  
+    const matchingMetaDoc = querySnapshot.docs.find(doc => {
+      const metaData = doc.data();
+      return (
+        metaData.title === metaTitulo &&
+        metaData.description === metaDescricao &&
+        metaData.objetivoId === objetivoId
+      );
+    });
+  
+    if (!matchingMetaDoc) {
+      return null;
+    }
+  
+    const metaId = matchingMetaDoc.id;
+
+    editingMeta.metaId = metaId;
+    console.log('NA REQUISIÇÃO ID META É', metaId);
+
+    return metaId;
+  };
 
   const handleObjetivoPress = async () => {
     if (modoEdicao) {
@@ -40,7 +84,7 @@ const CadastreObjetivo = ({ navigation}) => {
     }
   };
 
-  useEffect(() => {
+  useEffect(() => {  
     if (editingObjetivo) {
       setModoEdicao(true);
       setDobjetivo(editingObjetivo.title);
@@ -51,11 +95,39 @@ const CadastreObjetivo = ({ navigation}) => {
     }
   }, [editingObjetivo]);
 
+  useEffect(() => {
+    if (editingMeta) {
+      setMetaEditingMode(true);
+      setModoEdicao(true);
+      setMetaTitulo(editingMeta.title);
+      setMetaDescricao(editingMeta.description);
+      setBotaoStyle(styles.buttonEdicao);
+      objetivoIdRef.current = editingObjetivo.id;
+      // metaIdRef.current = editingMeta.metaId;
+
+      const fetchMetaId = async () => {
+        const metaId = await getMetaIdByObjetivoId(
+          editingObjetivo.id,
+          editingMeta.title,
+          editingMeta.description
+        );
+        const objetivoId = editingObjetivo.id;
+        console.log(objetivoId)
+
+        metaEditado(objetivoId, metaId);
+        // handleMetaPress(objetivoId, metaId);
+
+      };
+      fetchMetaId();
+    }
+  }, [editingMeta]);
+
   const showToast = () => {
     toastRef.current.show('This is a toast message', DURATION.LENGTH_LONG);
   };
   
   const objetivoEditado = async () => {
+
     if (Dojetivo.trim() === '' || Ddescricao.trim() === '') {
       toastRef.current.show('Preencha todos os campos obrigatórios!', DURATION.LENGTH_LONG);
       
@@ -103,6 +175,9 @@ const CadastreObjetivo = ({ navigation}) => {
     setIsLoading(false);
   };
   
+  
+
+
 
   const adicionarObjetivo = async () => {
 
@@ -137,6 +212,9 @@ const CadastreObjetivo = ({ navigation}) => {
       setDobjetivo(novoObjetivo.title);
       setDdescricao(novoObjetivo.description);
       adicionarMeta(objetivoId);
+
+      metaEditado(objetivoId); /// adicionei
+
       setObjetivoCadastrado(true);
       setShowObjetivoList(true);
       toastRef.current.show('Objetivo adicionado!', DURATION.LENGTH_LONG);
@@ -163,9 +241,13 @@ const CadastreObjetivo = ({ navigation}) => {
 
     if (metaTitulo.trim() === '' || metaDescricao.trim() === '') {
       toastRef.current.show('Preencha todos os campos obrigatórios!', DURATION.LENGTH_LONG);
-
       return;
     }
+
+    // if (modoEdicao) {
+    //   metaEditado();
+    //   return;
+    // }
 
     if (isLoading) {
       return;
@@ -196,9 +278,72 @@ const CadastreObjetivo = ({ navigation}) => {
     setIsLoading(false);
   }
 
+  const metaEditado = async (objetivoId, metaId) => {
+    console.log( 'O ID DO OBEJTIVO É:', objetivoId, 'e O ID DA META É:', metaId)
+
+    if (modoEdicao && !objetivoFoiEditado) {
+      toastRef.current.show('Edite o seu objetivo e adicione metas para ele!', DURATION.LENGTH_LONG);
+      return;
+    }
+  
+    if (metaTitulo.trim() === '' || metaDescricao.trim() === '') {
+      toastRef.current.show('Preencha todos os campos obrigatórios!', DURATION.LENGTH_LONG);
+      return;
+    }
+  
+    if (isLoading) {
+      return;
+    }
+    setIsLoading(true);
+  
+    const editadoMeta = {
+      // metaId: metaId,
+      title: metaTitulo,
+      description: metaDescricao,
+      completed: false,
+      objetivoId: objetivoId,
+      userId: auth.currentUser.uid,
+    };
+
+    let houveAlteracao = true;
+
+    if (metaTitulo === editingMeta.title  && metaDescricao === editingMeta.description) {
+      houveAlteracao = false;
+    }
+
+    try {
+      if (houveAlteracao) {
+        console.log('PRÓXIMO DA OPERAÇÃO -> o id da meta é: ', metaId);
+        await updateDoc(doc(db, 'meta', metaId), editadoMeta);
+        await updateDoc(doc(db, 'meta', metaId), { userId: auth.currentUser.uid });
+      }
+        setMetaTitulo(editadoMeta.title);
+        setMetaDescricao(editadoMeta.description);
+        setUpdateMetas(true);
+      if (houveAlteracao) {
+        toastRef.current.show('Meta atualizada!', DURATION.LENGTH_LONG);
+        } else {
+          toastRef.current.show('Meta atualizada sem alterações!', DURATION.LENGTH_LONG);
+        }
+    } catch (error) {
+      console.log('Erro ao editar a meta:', error);
+      toastRef.current.show('Erro ao editar a meta!', DURATION.LENGTH_LONG);
+    }
+    setIsLoading(false);
+  };
+
   const toggleMetaCampos = () => {
+    setIsEditingMeta(false); // Desabilita o botão "Editar meta"
+    setShowAddButtonMeta(!isEditingMeta); // Atualiza o valor de showAddButton com base em isEditingMeta
     setShowMetaCampos(!showMetaCampos);
     setContainerPaddingBottom(showMetaCampos ? 433 : 263);
+
+    // Verifica se o botão "Editar meta" está desabilitado
+    if (!isEditingMeta) {
+      setEditingMeta(null);
+      setMetaTitulo('');
+      setMetaDescricao('');
+    }
   };
 
   const renderItem = ({ item }) => (
@@ -206,8 +351,13 @@ const CadastreObjetivo = ({ navigation}) => {
       title={item.title} 
       description={item.description} 
       completed={item.completed} 
-      onEditPress={() => console.log('Editar objetivo')} 
-      onCompletePress={() => console.log('Concluir objetivo')}
+      onEditPress={() => {
+        toggleMetaCampos();
+        setEditingMeta(item);
+        setIsEditingMeta(true); // Habilita o botão "Editar meta"
+        setShowAddButtonMeta(false);
+      }} 
+      onCompletePress={() => console.log('Concluir Meta')}
     />
   );
   
@@ -226,6 +376,7 @@ const CadastreObjetivo = ({ navigation}) => {
   }, [modoEdicao]);
 
   useEffect(() => {
+    
     const unsubscribe = onSnapshot(collection(db, 'meta'), (querySnapshot) => {
       const metaData = [];
       querySnapshot.forEach((doc) => {
@@ -328,18 +479,34 @@ const CadastreObjetivo = ({ navigation}) => {
                       theme={theme}
                       style={styles.input}/>
 
+                    {showAddButtonMeta && (
                     <View style={styles.btnAdicionarMeta}>
                     <Button
                       mode="contained"
                       onPress={() => adicionarMeta(objetivoIdRef.current)}
-                      contentStyle={styles.button2}
-                      labelStyle={styles.buttonLabel2}
+                      
+                      contentStyle={styles.button}
+                      labelStyle={styles.buttonLabel}
                       theme={theme}
                       disabled={isLoading}>
                       Adicionar Meta
                     </Button>
                     </View>
+                    )}
 
+                    {isEditingMeta && (
+                    <View style={styles.btnAdicionarMeta}>
+                    <Button
+                      mode="contained"
+                      onPress={() => metaEditado(objetivoIdRef.current)}
+                      contentStyle={botaoStyle}
+                      labelStyle={styles.buttonLabel}
+                      theme={theme}
+                      disabled={isLoading}>
+                        Editar meta
+                    </Button>
+                    </View>
+                    )}
                   </React.Fragment>
                 )}
                   {metaList.filter(meta => meta.objetivoId === objetivoIdRef.current && meta.userId === auth.currentUser.uid).length > 0 && (
@@ -451,21 +618,21 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     },
-    containerFlat: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
+  containerFlat: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
     },
-    frame: {
-      width: 300,
-      height: 400,
-      borderWidth: 0,
-      overflow: 'hidden',
+  frame: {
+    width: 300,
+    height: 400,
+    borderWidth: 0,
+    overflow: 'hidden',
     },
-    containerMenuGlobal: {
-      width: '100%',
-      height: 53,
-  },
+  containerMenuGlobal: {
+    width: '100%',
+    height: 53,
+    },
   toastContainer: {
     position: 'absolute',
     bottom: -85,
@@ -475,12 +642,12 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     paddingVertical: 15,
     paddingHorizontal: 30,
-  },
+    },
   toastText: {
     color: '#FFFFFF',
     fontSize: 16,
     textAlign: 'center',
-  },
-  });
+    },
+    });
   
 export default CadastreObjetivo;
