@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
+import theme from '../components/DefaultTheme';
 
 function Meta({ title, description, onEditPress, onCompletePress}) {
   return (
@@ -13,14 +14,14 @@ function Meta({ title, description, onEditPress, onCompletePress}) {
         <Icon
           name="edit"
           type="font-awesome"
-          color="#fff"
+          color={theme.colors.tercyary}
           onPress={onEditPress}
           containerStyle={{ marginRight: 10 }}
         />
         <Icon
           name="check"
           type="font-awesome"
-          color="#fff"
+          color={theme.colors.primary}
           onPress={onCompletePress}
         />
       </View>

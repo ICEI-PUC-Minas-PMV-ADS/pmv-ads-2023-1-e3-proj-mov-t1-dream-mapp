@@ -49,7 +49,7 @@ const TopBar = ({ navigation }) => {
       <View style={styles.positionIcon}>
         <TouchableOpacity style={styles.leftIcon}>
           <Icon
-            name="user"
+            name="user-check"
             size={25}
             color="white"
             onPress={() => navigation.navigate('Profile')}
