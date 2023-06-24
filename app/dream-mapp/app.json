@@ -1,31 +1,30 @@
 {
   "expo": {
-    "name": "dream-mapp",
+    "name": "Dream Mapp",
     "slug": "dream-mapp",
+    "privacy": "public",
+    "sdkVersion": "48.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "runtimeVersion": "1.0.0",
+    "jsEngine": "hermes",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gabrielnakhata.dreammapp",
+      "runtimeVersion": "1.0.0"
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "",
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.gabrielnakhata.dreammapp"
-    },
-    "web": {
-      "favicon": ""
+      "package": "com.gabrielnakhata.dreammapp",
+      "runtimeVersion": "1.0.0"
     },
     "extra": {
       "eas": {
