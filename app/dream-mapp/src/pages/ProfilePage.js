@@ -3,13 +3,21 @@ import { SafeAreaView, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { ProgressChart } from 'react-native-chart-kit';
 import {Image} from 'react-native';
 
+<<<<<<< HEAD
 const Profile = ({navigation}) => {
 
+=======
+const ProfilePage = () => {
+>>>>>>> feature/profile-page
   const chartData = {
     labels: ['Concluídos', 'Em aberto', 'Removidos'],
     data: [0.6, 0.2, 0.2],
   };
+<<<<<<< HEAD
   const myImage = require('../assets/avatar.png');
+=======
+  const myImage = require('../assets/image.png');
+>>>>>>> feature/profile-page
   const achievements = [
     {
       name: 'Conquista 1',
@@ -100,4 +108,8 @@ const styles = StyleSheet.create({
   },
 });
 
+<<<<<<< HEAD
 export default Profile;
+=======
+export default ProfilePage;
+>>>>>>> feature/profile-page

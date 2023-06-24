@@ -52,7 +52,7 @@ Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum 
   - [Raul Oliveira](https://github.com/RaulShinaede)
   - [Gabriel Nakhata](https://github.com/gabrielnakhata)
   - [Bruno Selas](https://github.com/brunosellas)
-- **Equipe de Design**: Simone Nogueira.
+- **Equipe de Design**:
   - [Raul Oliveira](https://github.com/RaulShinaede)
   - [Gabriel Nakhata](https://github.com/gabrielnakhata)
 
