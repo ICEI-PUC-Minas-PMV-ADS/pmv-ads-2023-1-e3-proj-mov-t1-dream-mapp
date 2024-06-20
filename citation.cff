@@ -1,0 +1,22 @@
+message: Please cite this software using these metadata.
+title: DreamMapp
+authors:
+  - family-names: Alves de Lima Sales
+    given-names: Ayrles
+  - family-names: Nakhata Lopes Rua Nhimi
+    given-names: Gabriel
+  - family-names: Guimarães Santos
+    given-names: Pedro
+  - family-names: Liberato Ferreira
+    given-names: Renato
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Ricardo dos Santos Machado
+    given-names: Will
+keywords:
+  - Gestão
+  - Metas
+  - Progresso
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e3-proj-mov-t1-dream-mapp
+version: 1.0.0
+date-released: 2023-23-06
